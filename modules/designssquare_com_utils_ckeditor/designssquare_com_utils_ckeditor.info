@@ -1,0 +1,13 @@
+name = DesignsSquare.com: Utils: CKEditor
+description = CKEditor configurations
+core = 7.x
+package = DesignsSquare.com.utilities.ckeditor
+version = 7.x-1.0
+project = designssquare_com_utils_ckeditor
+dependencies[] = ckeditor
+dependencies[] = imce
+features[ckeditor_profile][] = Advanced
+features[ckeditor_profile][] = CKEditor Global Profile
+features[ckeditor_profile][] = Full
+features[features_api][] = api:2
+project path = sites/all/modules/designssquare_com_module_ckeditor/modules

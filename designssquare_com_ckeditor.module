@@ -1,0 +1,364 @@
+<?php
+
+
+// Create a variable to store the path to this module
+//define('DS_COM_BLOG_PATH', drupal_get_path('module', 'designssquare_com_blog'));
+//module_load_include('module', 'designssquare_lib');
+
+//replace ckeditor.util.js with one that doesn' break
+function designssquare_com_ckeditor_js_alter(&$js){
+    foreach($js as $key => $js_ins){
+        $token_path = explode("/", $key);
+        $current_js_lib = $token_path[count($token_path) - 1];
+        if($current_js_lib == 'ckeditor.utils.js'){
+            //replace location
+            $module_path = drupal_get_path('module', 'designssquare_com_ckeditor');
+            $js[$key]['data'] = $module_path.'/js/includes/ckeditor.utils.js';
+        }
+    }
+}
+
+function designssquare_com_ckeditor_ckeditor_plugin()
+{
+    $base_path   = '%base_path%';
+    $module_path = drupal_get_path('module', 'designssquare_com_ckeditor');
+    $plugins     = array();
+
+    //http://ckeditor.com/addon/leaflet
+    $plugins['leaflet'] = array(
+        'name'    => 'leaflet',
+        'desc'    => t('DesignsSquare.com: CKEditor: Leaflet plugin'),
+        'path'    => $module_path . '/ckeditor-plugins/leaflet/',
+        'default' => 't',
+        'buttons' => array(
+            'leaflet' => array(
+                'label' => 'Leaflet Map',
+                'icon'  => 'icons/leaflet.png',
+            ),
+        ),
+    );
+
+    http://ckeditor.com/addon/lineutils
+    $plugins['lineutils'] = array(
+        'name'    => 'lineutils',
+        'desc'    => t('DesignsSquare.com: CKEditor: LineUtils plugin'),
+        'path'    => $module_path . '/ckeditor-plugins/lineutils/',
+        'default' => 't'
+    );
+
+    //http://ckeditor.com/addon/widget
+    $plugins['widget'] = array(
+        'name'    => 'widget',
+        'desc'    => t('DesignsSquare.com: CKEditor: Widget plugin'),
+        'path'    => $module_path . '/ckeditor-plugins/widget/',
+        'default' => 't'
+    );
+
+    //http://ckeditor.com/addon/codesnippet
+//    http://highlightjs.org/static/test.html
+    $plugins['codesnippet'] = array(
+        'name'    => 'codesnippet',
+        'desc'    => t('DesignsSquare.com: CKEditor: Code Snippet plugin'),
+        'path'    => $module_path . '/ckeditor-plugins/codesnippet/',
+        'default' => 't',
+        'buttons' => array(
+            'CodeSnippet' => array(
+                'label' => 'Code Snippet',
+                'icon'  => 'icons/codesnippet.png',
+            ),
+        ),
+    );
+
+//http://ckeditor.com/addon/eqneditor
+    $plugins['eqneditor'] = array(
+        'name'    => 'eqneditor',
+        'desc'    => t('DesignsSquare.com: CKEditor: Equation Editor plugin'),
+        'path'    => $module_path . '/ckeditor-plugins/eqneditor/',
+        'default' => 't',
+        'buttons' => array(
+            'EqnEditor' => array(
+                'label' => 'Equation Editor',
+                'icon'  => 'icons/eqneditor.png',
+            ),
+        ),
+    );
+
+//    http://ckeditor.com/addon/tliyoutube
+    $plugins['tliyoutube'] = array(
+        'name'    => 'tliyoutube',
+        'desc'    => t('DesignsSquare.com: CKEditor: Minimal YouTube plugin'),
+        'path'    => $module_path . '/ckeditor-plugins/tliyoutube_1.0/',
+        'default' => 't',
+        'buttons' => array(
+            'tliyoutube' => array(
+                'label' => ' Minimal YouTube',
+                'icon'  => 'icons/tliyoutube.png',
+            ),
+        ),
+    );
+
+//    http://ckeditor.com/addon/xmas
+    //@currently not working
+    $plugins['xmas'] = array(
+        'name'    => 'xmas',
+        'desc'    => t('DesignsSquare.com: CKEditor: Greetings Cards plugin'),
+        'path'    => $module_path . '/ckeditor-plugins/ckeditor-plugin-xmas-1.0.3/',
+        'default' => 't',
+        'buttons' => array(
+            'Xmas' => array(
+                'label' => 'Greetings Cards',
+                'icon'  => 'icons/xmas.png',
+            ),
+        ),
+    );
+
+        //http://ckeditor.com/addon/googledocs
+    //EXample: http://www.google.com/google-d-s/docsQuickstartGuide.pdf
+    $plugins['googledocs'] = array(
+        'name'    => 'googledocs',
+        'desc'    => t('DesignsSquare.com: CKEditor: Google Docs Viewer plugin'),
+        'path'    => $module_path . '/ckeditor-plugins/googledocs/',
+        'default' => 't',
+        'buttons' => array(
+            'Googledocs' => array(
+                'label' => 'Google Docs Viewer',
+                'icon'  => 'icons/googledocs.png',
+            ),
+        ),
+    );
+
+    //fakeobjects is dependency for many other
+    //http://ckeditor.com/addon/fakeobjects
+    $plugins['fakeobjects'] = array(
+        'name'    => 'fakeobjects',
+        'desc'    => t('DesignsSquare.com: CKEditor: Fake Objects plugin'),
+        'path'    => $module_path . '/ckeditor-plugins/fakeobjects_4.4.0/',
+        'default' => 't',
+
+    );
+
+    //@Todo not working for 4.4.0
+    $plugins['showprotected'] = array(
+        'name'    => 'showprotected',
+        'desc'    => t('DesignsSquare.com: CKEditor: Show Protected plugin'),
+        'path'    => $module_path . '/ckeditor-plugins/showprotected/',
+        'default' => 't',
+    );
+
+    //http://ckeditor.com/addon/tableresize
+    $plugins['tableresize'] = array(
+        'name'    => 'tableresize',
+        'desc'    => t('DesignsSquare.com: CKEditor: Table Resize plugin'),
+        'path'    => $module_path . '/ckeditor-plugins/tableresize_4.4.0/',
+        'default' => 't',
+    );
+
+//    http://ckeditor.com/addon/autogrow
+    //This plugin is to be used with the themedui creator.
+    $plugins['autogrow'] = array(
+        'name'    => 'autogrow',
+        'desc'    => t('DesignsSquare.com: CKEditor: Auto Grow plugin'),
+        'path'    => $module_path . '/ckeditor-plugins/autogrow_4.4.0/',
+        'default' => 't',
+    );
+
+    //http://ckeditor.com/addon/oembed
+    //https://github.com/starfishmod/jquery-oembed-all
+    $plugins['oembed'] = array(
+        'name'    => 'oembed',
+        'desc'    => t('DesignsSquare.com: CKEditor: Media (oEmbed) plugin'),
+        'path'    => $module_path . '/ckeditor-plugins/oembed_1.16/',
+        'default' => 't',
+        'buttons' => array(
+            'oembed' => array(
+                'label' => 'Media (oEmbed)',
+                'icon'  => 'icons/oembed.png',
+            ),
+        ),
+    );
+
+    //http://ckeditor.com/addon/uicolor
+    $plugins['uicolor'] = array(
+        'name'    => 'uicolor',
+        'desc'    => t('DesignsSquare.com: CKEditor: UI Color plugin'),
+        'path'    => $module_path . '/ckeditor-plugins/uicolor_4.4.0/',
+        'default' => 't',
+        'buttons' => array(
+            'UIColor' => array(
+                'label' => 'UI Color',
+                'icon'  => 'icons/uicolor.png',
+            ),
+        ),
+    );
+
+ //http://ckeditor.com/addon/sourcedialog
+    $plugins['sourcedialog'] = array(
+        'name'    => 'sourcedialog',
+        'desc'    => t('DesignsSquare.com: CKEditor: Source Dialog plugin'),
+        'path'    => $module_path . '/ckeditor-plugins/sourcedialog_4.4.0/',
+        'default' => 't',
+        'buttons' => array(
+            'Sourcedialog' => array(
+                'label' => 'Source Dialog',
+                'icon'  => 'icons/sourcedialog.png',
+            ),
+        ),
+    );
+
+    //http://ckeditor.com/addon/iframedialog
+    $plugins['iframedialog'] = array(
+        'name'    => 'iframedialog',
+        'desc'    => t('DesignsSquare.com: CKEditor: IFrame Dialog Field plugin'),
+        'path'    => $module_path . '/ckeditor-plugins/iframedialog_4.4.0/',
+        'default' => 't',
+    );
+
+    //http://ckeditor.com/addon/devtools
+    $plugins['devtools'] = array(
+        'name'    => 'devtools',
+        'desc'    => t('DesignsSquare.com: CKEditor: Developer Tools plugin'),
+        'path'    => $module_path . '/ckeditor-plugins/devtools_4.4.0/',
+        'default' => 't',
+    );
+
+    //http://ckeditor.com/addon/backgrounds
+    $plugins['backgrounds'] = array(
+        'name'    => 'backgrounds',
+        'desc'    => t('DesignsSquare.com: CKEditor: Background Image for Tables and Cells'),
+        'path'    => $module_path . '/ckeditor-plugins/backgrounds_1.5.1/',
+        'default' => 't',
+    );
+
+    //http://ckeditor.com/addon/confighelper
+    $plugins['confighelper'] = array(
+        'name'    => 'confighelper',
+        'desc'    => t('DesignsSquare.com: CKEditor: Configuration Helper'),
+        'path'    => $module_path . '/ckeditor-plugins/confighelper_1.8.2/',
+        'default' => 't',
+    );
+
+    //http://ckeditor.com/addon/uploadcare
+    $plugins['uploadcare'] = array(
+        'name'    => 'uploadcare',
+        'desc'    => t('DesignsSquare.com: CKEditor: Uploadcare: Add media from anywhere'),
+        'path'    => $module_path . '/ckeditor-plugins/uploadcare_1.3.0/',
+        'default' => 't',
+        'buttons' => array(
+            'Uploadcare' => array(
+                'label' => 'Uploadcare',
+                'icon'  => 'images/logo.png',
+            ),
+        ),
+    );
+
+    //http://ckeditor.com/addon/htmlbuttons
+    $plugins['htmlbuttons'] = array(
+        'name'    => 'htmlbuttons',
+        'desc'    => t('DesignsSquare.com: CKEditor: HTML Buttons'),
+        'path'    => $module_path . '/ckeditor-plugins/htmlbuttons_1.0/',
+        'default' => 't',
+    );
+
+    //http://ckeditor.com/addon/docprops
+    $plugins['docprops'] = array(
+        'name'    => 'docprops',
+        'desc'    => t('DesignsSquare.com: CKEditor: Document Properties'),
+        'path'    => $module_path . '/ckeditor-plugins/docprops_4.4.0/',
+        'default' => 't',
+        'buttons' => array(
+            'DocProps' => array(
+                'label' => 'Document Properties',
+                'icon'  => 'icons/docprops.png',
+            ),
+        ),
+    );
+
+    //http://ckeditor.com/addon/image2
+//    $plugins['image2'] = array(
+//        'name'    => 'image2',
+//        'desc'    => t('DesignsSquare.com: CKEditor: Enhanced Image'),
+//        'path'    => $module_path . '/ckeditor-plugins/image2_4.4.0/',
+//        'default' => 't',
+//        'buttons' => array(
+//            'Image' => array(
+//                'label' => 'Document Properties',
+//                'icon'  => 'icons/image.png',
+//            ),
+//        ),
+//    );
+
+    //http://ckeditor.com/addon/slideshow
+    $plugins['slideshow'] = array(
+        'name'    => 'slideshow',
+        'desc'    => t('DesignsSquare.com: CKEditor: SlideShow'),
+        'path'    => $module_path . '/ckeditor-plugins/SlideShow_1.05/',
+        'default' => 't',
+        'buttons' => array(
+            'Slideshow' => array(
+                'label' => 'Slide Show',
+                'icon'  => 'icons/slideshow.png',
+            ),
+        ),
+    );
+
+    //http://ckeditor.com/addon/floating-tools
+    $plugins['floating-tools'] = array(
+        'name'    => 'floating-tools',
+        'desc'    => t('DesignsSquare.com: CKEditor: Flooting Tools'),
+        'path'    => $module_path . '/ckeditor-plugins/floating-tools_1.2_0/',
+        'default' => 't',
+    );
+
+    //http://ckeditor.com/addon/maxheight
+    $plugins['maxheight'] = array(
+        'name'    => 'maxheight',
+        'desc'    => t('DesignsSquare.com: CKEditor: Max Height'),
+        'path'    => $module_path . '/ckeditor-plugins/maxheight_4.0_0/',
+        'default' => 't',
+    );
+
+    //http://ckeditor.com/addon/texttransform
+    $plugins['texttransform'] = array(
+    'name'    => 'texttransform',
+    'desc'    => t('DesignsSquare.com: CKEditor: Text Transform'),
+    'path'    => $module_path . '/ckeditor-plugins/texttransform_1.1/',
+    'default' => 't',
+    );
+
+    //http://ckeditor.com/addon/textselection
+    $plugins['textselection'] = array(
+        'name'    => 'textselection',
+        'desc'    => t('DesignsSquare.com: CKEditor: Keep Text Selection'),
+        'path'    => $module_path . '/ckeditor-plugins/textselection_1.03/',
+        'default' => 't',
+    );
+
+    //http://ckeditor.com/addon/mrmonkey
+    $plugins['mrmonkey'] = array(
+        'name'    => 'mrmonkey',
+        'desc'    => t('DesignsSquare.com: CKEditor: MrMonkey - simulator'),
+        'path'    => $module_path . '/ckeditor-plugins/mrmonkey_1.0.0_0/',
+        'default' => 't',
+        'buttons' => array(
+            'ToggleMrMonkey' => array(
+                'label' => 'Toggle Mr Monkey',
+                'icon'  => 'icons/togglemrmonkey.png',
+            ),
+            'MrMonkeySettings' => array(
+                'label' => 'Mr Monkey Settings',
+                'icon'  => 'icons/mrmonkeysettings.png',
+            ),
+        ),
+    );
+
+    //http://ckeditor.com/addon/letterspacing
+    $plugins['letterspacing'] = array(
+        'name'    => 'letterspacing',
+        'desc'    => t('DesignsSquare.com: CKEditor: Letter Spacing'),
+        'path'    => $module_path . '/ckeditor-plugins/ckeditor-letterspacing-0.1.0/',
+        'default' => 't',
+    );
+
+
+    return $plugins;
+}
