@@ -8,7 +8,8 @@
  * Implements hook_ckeditor_profile_defaults().
  */
 function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
-  $data = array(
+    $module_path = drupal_get_path('module', 'designssquare_com_ckeditor');
+    $data = array(
     'Advanced' => array(
       'name' => 'Advanced',
       'settings' => array(
@@ -63,21 +64,21 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'autogrow' => array(
             'name' => 'autogrow',
             'desc' => 'DesignsSquare.com: CKEditor: Auto Grow plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/autogrow_4.4.0/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/autogrow_4.4.0/',
             'default' => 't',
             'buttons' => FALSE,
           ),
           'backgrounds' => array(
             'name' => 'backgrounds',
             'desc' => 'DesignsSquare.com: CKEditor: Background Image for Tables and Cells',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/backgrounds_1.5.1/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/backgrounds_1.5.1/',
             'default' => 't',
             'buttons' => FALSE,
           ),
           'codesnippet' => array(
             'name' => 'codesnippet',
             'desc' => 'DesignsSquare.com: CKEditor: Code Snippet plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/codesnippet/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/codesnippet/',
             'default' => 't',
             'buttons' => array(
               'CodeSnippet' => array(
@@ -89,14 +90,14 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'confighelper' => array(
             'name' => 'confighelper',
             'desc' => 'DesignsSquare.com: CKEditor: Configuration Helper',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/confighelper_1.8.2/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/confighelper_1.8.2/',
             'default' => 't',
             'buttons' => FALSE,
           ),
           'docprops' => array(
             'name' => 'docprops',
             'desc' => 'DesignsSquare.com: CKEditor: Document Properties',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/docprops_4.4.0/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/docprops_4.4.0/',
             'default' => 't',
             'buttons' => array(
               'DocProps' => array(
@@ -120,7 +121,7 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'eqneditor' => array(
             'name' => 'eqneditor',
             'desc' => 'DesignsSquare.com: CKEditor: Equation Editor plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/eqneditor/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/eqneditor/',
             'default' => 't',
             'buttons' => array(
               'EqnEditor' => array(
@@ -132,14 +133,14 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'fakeobjects' => array(
             'name' => 'fakeobjects',
             'desc' => 'DesignsSquare.com: CKEditor: Fake Objects plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/fakeobjects_4.4.0/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/fakeobjects_4.4.0/',
             'default' => 't',
             'buttons' => FALSE,
           ),
           'googledocs' => array(
             'name' => 'googledocs',
             'desc' => 'DesignsSquare.com: CKEditor: Google Docs Viewer plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/googledocs/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/googledocs/',
             'default' => 't',
             'buttons' => array(
               'Googledocs' => array(
@@ -151,14 +152,14 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'htmlbuttons' => array(
             'name' => 'htmlbuttons',
             'desc' => 'DesignsSquare.com: CKEditor: HTML Buttons',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/htmlbuttons_1.0/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/htmlbuttons_1.0/',
             'default' => 't',
             'buttons' => FALSE,
           ),
           'iframedialog' => array(
             'name' => 'iframedialog',
             'desc' => 'DesignsSquare.com: CKEditor: IFrame Dialog Field plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/iframedialog_4.4.0/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/iframedialog_4.4.0/',
             'default' => 't',
             'buttons' => FALSE,
           ),
@@ -177,7 +178,7 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'leaflet' => array(
             'name' => 'leaflet',
             'desc' => 'DesignsSquare.com: CKEditor: Leaflet plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/leaflet/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/leaflet/',
             'default' => 't',
             'buttons' => array(
               'leaflet' => array(
@@ -189,28 +190,28 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'letterspacing' => array(
             'name' => 'letterspacing',
             'desc' => 'DesignsSquare.com: CKEditor: Letter Spacing',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/ckeditor-letterspacing-0.1.0/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/ckeditor-letterspacing-0.1.0/',
             'default' => 't',
             'buttons' => FALSE,
           ),
           'lineutils' => array(
             'name' => 'lineutils',
             'desc' => 'DesignsSquare.com: CKEditor: LineUtils plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/lineutils/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/lineutils/',
             'default' => 't',
             'buttons' => FALSE,
           ),
           'maxheight' => array(
             'name' => 'maxheight',
             'desc' => 'DesignsSquare.com: CKEditor: Max Height',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/maxheight_4.0_0/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/maxheight_4.0_0/',
             'default' => 't',
             'buttons' => FALSE,
           ),
           'mrmonkey' => array(
             'name' => 'mrmonkey',
             'desc' => 'DesignsSquare.com: CKEditor: MrMonkey - simulator',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/mrmonkey_1.0.0_0/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/mrmonkey_1.0.0_0/',
             'default' => 't',
             'buttons' => array(
               'ToggleMrMonkey' => array(
@@ -226,7 +227,7 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'oembed' => array(
             'name' => 'oembed',
             'desc' => 'DesignsSquare.com: CKEditor: Media (oEmbed) plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/oembed_1.16/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/oembed_1.16/',
             'default' => 't',
             'buttons' => array(
               'oembed' => array(
@@ -238,14 +239,14 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'showprotected' => array(
             'name' => 'showprotected',
             'desc' => 'DesignsSquare.com: CKEditor: Show Protected plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/showprotected/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/showprotected/',
             'default' => 't',
             'buttons' => FALSE,
           ),
           'slideshow' => array(
             'name' => 'slideshow',
             'desc' => 'DesignsSquare.com: CKEditor: SlideShow',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/SlideShow_1.05/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/SlideShow_1.05/',
             'default' => 't',
             'buttons' => array(
               'Slideshow' => array(
@@ -257,7 +258,7 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'sourcedialog' => array(
             'name' => 'sourcedialog',
             'desc' => 'DesignsSquare.com: CKEditor: Source Dialog plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/sourcedialog_4.4.0/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/sourcedialog_4.4.0/',
             'default' => 't',
             'buttons' => array(
               'Sourcedialog' => array(
@@ -269,21 +270,21 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'tableresize' => array(
             'name' => 'tableresize',
             'desc' => 'DesignsSquare.com: CKEditor: Table Resize plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/tableresize_4.4.0/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/tableresize_4.4.0/',
             'default' => 't',
             'buttons' => FALSE,
           ),
           'textselection' => array(
             'name' => 'textselection',
             'desc' => 'DesignsSquare.com: CKEditor: Keep Text Selection',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/textselection_1.03/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/textselection_1.03/',
             'default' => 't',
             'buttons' => FALSE,
           ),
           'texttransform' => array(
             'name' => 'texttransform',
             'desc' => 'DesignsSquare.com: CKEditor: Text Transform',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/texttransform_1.1/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/texttransform_1.1/',
             'default' => 't',
             'buttons' => array(
               'TransformTextSwitcher' => array(
@@ -307,7 +308,7 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'uicolor' => array(
             'name' => 'uicolor',
             'desc' => 'DesignsSquare.com: CKEditor: UI Color plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/uicolor_4.4.0/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/uicolor_4.4.0/',
             'default' => 't',
             'buttons' => array(
               'UIColor' => array(
@@ -319,7 +320,7 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'uploadcare' => array(
             'name' => 'uploadcare',
             'desc' => 'DesignsSquare.com: CKEditor: Uploadcare: Add media from anywhere',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/uploadcare_1.3.0/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/uploadcare_1.3.0/',
             'default' => 't',
             'buttons' => array(
               'Uploadcare' => array(
@@ -331,14 +332,14 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'widget' => array(
             'name' => 'widget',
             'desc' => 'DesignsSquare.com: CKEditor: Widget plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/widget/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/widget/',
             'default' => 't',
             'buttons' => FALSE,
           ),
           'xmas' => array(
             'name' => 'xmas',
             'desc' => 'DesignsSquare.com: CKEditor: Greetings Cards plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/ckeditor-plugin-xmas-1.0.3/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/ckeditor-plugin-xmas-1.0.3/',
             'default' => 't',
             'buttons' => array(
               'Xmas' => array(
@@ -423,21 +424,21 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'autogrow' => array(
             'name' => 'autogrow',
             'desc' => 'DesignsSquare.com: CKEditor: Auto Grow plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/autogrow_4.4.0/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/autogrow_4.4.0/',
             'default' => 't',
             'buttons' => FALSE,
           ),
           'backgrounds' => array(
             'name' => 'backgrounds',
             'desc' => 'DesignsSquare.com: CKEditor: Background Image for Tables and Cells',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/backgrounds_1.5.1/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/backgrounds_1.5.1/',
             'default' => 't',
             'buttons' => FALSE,
           ),
           'codesnippet' => array(
             'name' => 'codesnippet',
             'desc' => 'DesignsSquare.com: CKEditor: Code Snippet plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/codesnippet/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/codesnippet/',
             'default' => 't',
             'buttons' => array(
               'CodeSnippet' => array(
@@ -449,14 +450,14 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'confighelper' => array(
             'name' => 'confighelper',
             'desc' => 'DesignsSquare.com: CKEditor: Configuration Helper',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/confighelper_1.8.2/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/confighelper_1.8.2/',
             'default' => 't',
             'buttons' => FALSE,
           ),
           'docprops' => array(
             'name' => 'docprops',
             'desc' => 'DesignsSquare.com: CKEditor: Document Properties',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/docprops_4.4.0/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/docprops_4.4.0/',
             'default' => 't',
             'buttons' => array(
               'DocProps' => array(
@@ -480,7 +481,7 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'eqneditor' => array(
             'name' => 'eqneditor',
             'desc' => 'DesignsSquare.com: CKEditor: Equation Editor plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/eqneditor/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/eqneditor/',
             'default' => 't',
             'buttons' => array(
               'EqnEditor' => array(
@@ -492,14 +493,14 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'fakeobjects' => array(
             'name' => 'fakeobjects',
             'desc' => 'DesignsSquare.com: CKEditor: Fake Objects plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/fakeobjects_4.4.0/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/fakeobjects_4.4.0/',
             'default' => 't',
             'buttons' => FALSE,
           ),
           'googledocs' => array(
             'name' => 'googledocs',
             'desc' => 'DesignsSquare.com: CKEditor: Google Docs Viewer plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/googledocs/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/googledocs/',
             'default' => 't',
             'buttons' => array(
               'Googledocs' => array(
@@ -511,14 +512,14 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'htmlbuttons' => array(
             'name' => 'htmlbuttons',
             'desc' => 'DesignsSquare.com: CKEditor: HTML Buttons',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/htmlbuttons_1.0/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/htmlbuttons_1.0/',
             'default' => 't',
             'buttons' => FALSE,
           ),
           'iframedialog' => array(
             'name' => 'iframedialog',
             'desc' => 'DesignsSquare.com: CKEditor: IFrame Dialog Field plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/iframedialog_4.4.0/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/iframedialog_4.4.0/',
             'default' => 't',
             'buttons' => FALSE,
           ),
@@ -537,7 +538,7 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'leaflet' => array(
             'name' => 'leaflet',
             'desc' => 'DesignsSquare.com: CKEditor: Leaflet plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/leaflet/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/leaflet/',
             'default' => 't',
             'buttons' => array(
               'leaflet' => array(
@@ -549,28 +550,28 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'letterspacing' => array(
             'name' => 'letterspacing',
             'desc' => 'DesignsSquare.com: CKEditor: Letter Spacing',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/ckeditor-letterspacing-0.1.0/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/ckeditor-letterspacing-0.1.0/',
             'default' => 't',
             'buttons' => FALSE,
           ),
           'lineutils' => array(
             'name' => 'lineutils',
             'desc' => 'DesignsSquare.com: CKEditor: LineUtils plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/lineutils/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/lineutils/',
             'default' => 't',
             'buttons' => FALSE,
           ),
           'maxheight' => array(
             'name' => 'maxheight',
             'desc' => 'DesignsSquare.com: CKEditor: Max Height',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/maxheight_4.0_0/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/maxheight_4.0_0/',
             'default' => 't',
             'buttons' => FALSE,
           ),
           'mrmonkey' => array(
             'name' => 'mrmonkey',
             'desc' => 'DesignsSquare.com: CKEditor: MrMonkey - simulator',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/mrmonkey_1.0.0_0/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/mrmonkey_1.0.0_0/',
             'default' => 't',
             'buttons' => array(
               'ToggleMrMonkey' => array(
@@ -586,7 +587,7 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'oembed' => array(
             'name' => 'oembed',
             'desc' => 'DesignsSquare.com: CKEditor: Media (oEmbed) plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/oembed_1.16/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/oembed_1.16/',
             'default' => 't',
             'buttons' => array(
               'oembed' => array(
@@ -598,14 +599,14 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'showprotected' => array(
             'name' => 'showprotected',
             'desc' => 'DesignsSquare.com: CKEditor: Show Protected plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/showprotected/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/showprotected/',
             'default' => 't',
             'buttons' => FALSE,
           ),
           'slideshow' => array(
             'name' => 'slideshow',
             'desc' => 'DesignsSquare.com: CKEditor: SlideShow',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/SlideShow_1.05/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/SlideShow_1.05/',
             'default' => 't',
             'buttons' => array(
               'Slideshow' => array(
@@ -617,7 +618,7 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'sourcedialog' => array(
             'name' => 'sourcedialog',
             'desc' => 'DesignsSquare.com: CKEditor: Source Dialog plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/sourcedialog_4.4.0/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/sourcedialog_4.4.0/',
             'default' => 't',
             'buttons' => array(
               'Sourcedialog' => array(
@@ -629,21 +630,21 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'tableresize' => array(
             'name' => 'tableresize',
             'desc' => 'DesignsSquare.com: CKEditor: Table Resize plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/tableresize_4.4.0/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/tableresize_4.4.0/',
             'default' => 't',
             'buttons' => FALSE,
           ),
           'textselection' => array(
             'name' => 'textselection',
             'desc' => 'DesignsSquare.com: CKEditor: Keep Text Selection',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/textselection_1.03/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/textselection_1.03/',
             'default' => 't',
             'buttons' => FALSE,
           ),
           'texttransform' => array(
             'name' => 'texttransform',
             'desc' => 'DesignsSquare.com: CKEditor: Text Transform',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/texttransform_1.1/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/texttransform_1.1/',
             'default' => 't',
             'buttons' => array(
               'TransformTextSwitcher' => array(
@@ -667,7 +668,7 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'uicolor' => array(
             'name' => 'uicolor',
             'desc' => 'DesignsSquare.com: CKEditor: UI Color plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/uicolor_4.4.0/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/uicolor_4.4.0/',
             'default' => 't',
             'buttons' => array(
               'UIColor' => array(
@@ -679,7 +680,7 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'uploadcare' => array(
             'name' => 'uploadcare',
             'desc' => 'DesignsSquare.com: CKEditor: Uploadcare: Add media from anywhere',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/uploadcare_1.3.0/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/uploadcare_1.3.0/',
             'default' => 't',
             'buttons' => array(
               'Uploadcare' => array(
@@ -691,14 +692,14 @@ function designssquare_com_utils_ckeditor_ckeditor_profile_defaults() {
           'widget' => array(
             'name' => 'widget',
             'desc' => 'DesignsSquare.com: CKEditor: Widget plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/widget/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/widget/',
             'default' => 't',
             'buttons' => FALSE,
           ),
           'xmas' => array(
             'name' => 'xmas',
             'desc' => 'DesignsSquare.com: CKEditor: Greetings Cards plugin',
-            'path' => '%base_path%sites/all/modules/designssquare_com_module_ckeditor/ckeditor-plugins/ckeditor-plugin-xmas-1.0.3/',
+            'path' => '%base_path%sites/all/modules/'.$module_path.'/ckeditor-plugins/ckeditor-plugin-xmas-1.0.3/',
             'default' => 't',
             'buttons' => array(
               'Xmas' => array(
