@@ -10,6 +10,7 @@ files[] = designssquare_com_ckeditor.module
 
 dependencies[] = ckeditor
 dependencies[] = imce
+dependencies[] = designssquare_com_utils_ckeditor
 
 
 ;;Artifact Dependencies
