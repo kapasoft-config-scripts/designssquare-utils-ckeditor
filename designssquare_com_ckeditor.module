@@ -14,8 +14,95 @@ function designssquare_com_ckeditor_js_alter(&$js){
             //replace location
             $module_path = drupal_get_path('module', 'designssquare_com_ckeditor');
             $js[$key]['data'] = $module_path.'/js/includes/ckeditor.utils.js';
+            $js[$key]['weight'] = $js[$key]['weight'] + 1000;
+        }
+
+        if($current_js_lib == 'ckeditor.js'){
+            //replace location
+            $js[$key]['weight'] = $js[$key]['weight'] + 1000;
         }
     }
+}
+
+function designssquare_com_ckeditor_preprocess_page(&$vars){
+
+    $reqUrl = $_GET['q'];
+    //editor support
+    if(preg_match('/\/edit/', $reqUrl) && $vars['logged_in']){
+        $js_to_add = '';
+        $js_to_add .= 'var path = document.location.origin;'."\n";
+
+        $js_to_add .= "CKEDITOR.on( 'instanceCreated', function( ev ) {"."\n";
+        $js_to_add .= "         console.log('got in load event');"."\n";
+        $js_to_add .= "    if(ev.editor.name == 'edit-body-und-0-value'){"."\n";
+
+        $js_to_add .= "       ev.editor.on( 'contentDom', function(){"."\n";
+        $js_scripts = array();
+        drupal_alter('js_ckeditor', $js_scripts, $vars);
+
+        $js_to_add .= "       var ck_dom = ev.editor.document.$;"."\n";
+        $js_to_add .= _write_js_imports($js_scripts) ;
+
+        $js_to_add .= "         } );"."\n";
+        $js_to_add .= "    }"."\n";
+        $js_to_add .= ' });'."\n";
+
+        //get inline to execute
+        $js_inline_scripts = array();
+        drupal_alter('js_inline_ckeditor', $js_inline_scripts, $vars);
+        $js_to_add .= "     function _inline_import(ck_dom){"."\n";
+
+            $js_to_add .= "         var inline= ck_dom.createElement( 'script' );"."\n";
+            $js_to_add .= "         inline.type = 'text/javascript';"."\n";
+            $js_to_add .= "         inline.onload = function() {"."\n";
+            $js_to_add .= "             console.log( 'inline js loaded' );"."\n";
+            $js_to_add .= "              };"."\n";
+            foreach($js_inline_scripts as $key => $js_script){
+                if($js_script['options']['type'] == 'inline'){
+                    $load = preg_replace("/(\n\r|\r\n|\n|\r)/", "", $js_script['path']);
+            $js_to_add .= "          var sContents".$key." = '".$load."';"."\n";
+            $js_to_add .= "          var textNode".$key." = ck_dom.createTextNode(sContents".$key.");"."\n";
+            $js_to_add .= "          inline.appendChild(textNode".$key.");"."\n";
+            }
+        }
+        $js_to_add .= "                 inline.$ = inline;"."\n";
+        $js_to_add .= "                 ck_dom.head.appendChild(inline);"."\n";
+        $js_to_add .= "}"."\n";
+
+        $js_to_add .= "CKEDITOR.on( 'instanceReady', function( ev ) {"."\n";
+        $js_to_add .= '    editor = ev.editor;'."\n";
+        $js_to_add .= "    if(editor.name == 'edit-body-und-0-value'){"."\n";
+
+       //grab all css
+        $css_scripts = array();
+        drupal_alter('css_ckeditor', $css_scripts, $vars);
+        foreach($css_scripts as $key => $css_script){
+            $js_to_add .= "         editor.document.appendStyleSheet('/" . $css_script . "');"."\n";
+        }
+        $js_to_add .= "         }" . "\n";
+        $js_to_add .= '});' . "\n";
+        drupal_add_js($js_to_add, array('scope' => 'footer', 'type' => 'inline', 'weight' => 1001));
+    }
+}
+
+function _write_js_imports($js_scripts, $index = 0){
+    $js_to_add = '';
+//    while($index < count($js_scripts)){
+        if(isset($js_scripts[$index])){
+            $next_index = $index + 1;
+            $js_to_add .= "         var s".$index."= ck_dom.createElement( 'script' );"."\n";
+            $js_to_add .= "         s".$index.".type = 'text/javascript';"."\n";
+            $js_to_add .= "         s".$index.".onload = function() {"."\n";
+            $js_to_add .= "             console.log( 'script ".$js_scripts[$index]['path'] ." loaded' );"."\n";
+            $js_to_add .= "              "._write_js_imports($js_scripts,$next_index);
+            $js_to_add .= "              };"."\n";
+            $js_to_add .= "         s".$index.".src = '/". $js_scripts[$index]['path'] . "';"."\n";
+            $js_to_add .= "         s".$index.".$ = s".$index.";"."\n";
+            $js_to_add .= "         ck_dom.head.appendChild(s".$index.");"."\n";
+            return $js_to_add;
+        }else{
+            return '_inline_import(ck_dom);';
+        }
 }
 
 function designssquare_com_ckeditor_ckeditor_plugin()
