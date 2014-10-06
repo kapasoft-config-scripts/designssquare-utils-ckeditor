@@ -1,0 +1,337 @@
+<!doctype html>
+<!--[if IE 6 ]>
+<html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>
+<html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>
+<html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <title>CKEDITOR Helper - Making Editor Seamless</title>
+
+    <meta name="description"
+          content="DesignSquare.com giving back Drupal community">
+    <meta name="author" content="DesignsSquare.com">
+    <meta name="copyright" content="DesignsSquare.com">
+    <meta name="generator" content="Documenter v1.6 http://rxa.li/documenter">
+    <meta name="date" content="2012-03-27T00:00:00+02:00">
+    <link rel="stylesheet" href="css/documenter_style.css" media="all">
+    <script src="js/jquery.1.6.4.js"></script>
+    <script src="js/jquery.scrollTo-1.4.2-min.js"></script>
+    <script src="js/jquery.easing.js"></script>
+    <link rel="stylesheet" href="css/shDocumenter.css" media="screen">
+    <script src="js/shCore.js"></script>
+    <script src="js/shBrushCss.js"></script>
+    <script src="js/shBrushJScript.js"></script>
+    <script>SyntaxHighlighter.defaults['toolbar'] = false;
+    SyntaxHighlighter.all();</script>
+    <script>document.createElement('section');
+    var duration = 500, easing = 'swing';</script>
+    <script src="js/script.js"></script>
+    <style>
+        html {
+            background-color: #FFFFFF;
+            color: #383838;
+        }
+
+        ::-moz-selection {
+            background: #444444;
+            color: #DDDDDD;
+        }
+
+        ::selection {
+            background: #444444;
+            color: #DDDDDD;
+        }
+
+        hr {
+            border-top: 1px solid #E1B568;
+            border-bottom: 1px solid #FFFFFF;
+        }
+
+        #documenter_sidebar, #documenter_sidebar ol a {
+            background-color: #ffffff;
+            /*background-color: #E1B568;*/
+            /*color: #222222;*/
+            color: #373737;
+        }
+
+        #documenter_sidebar ol a {
+            -webkit-text-shadow: 1px 1px 0px #EEEEEE;
+            -moz-text-shadow: 1px 1px 0px #EEEEEE;
+            text-shadow: 1px 1px 0px #EEEEEE;
+        }
+
+        #documenter_sidebar ol {
+            border-top: 1px solid #E1A53C;
+        }
+
+        #documenter_sidebar ol a {
+            border-top: 1px solid #EEEEEE;
+            border-bottom: 1px solid #E1B568;
+            color: #444444;
+        }
+
+        #documenter_sidebar ol a:hover {
+            background: #cc9833;
+            color: #ffffff;
+            border-top: 1px solid #E1A53C;
+        }
+
+        #documenter_sidebar ol a.current {
+            background: #cc9833;
+            color: #ffffff;
+            border-top: 1px solid #E1A53C;
+        }
+
+        #documenter_copyright {
+            display: block !important;
+            visibility: visible !important;
+        }
+
+        #logo #textual span {
+            font-size: 20px;
+            font-family: 'Oswald', sans-serif;
+            color: #cc9833;
+            font-style: normal;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        #logo #textual {
+            font-size: 20px;
+            font-family: 'Oswald', sans-serif;
+            color: #373737;
+            font-style: normal;
+            font-weight: 700;
+            display: inline-block;
+            margin-top: 40px;
+            margin-left: 10px;
+            /*margin-bottom: 12px;*/
+            line-height: 1em;
+            text-transform: uppercase;
+        }
+    </style>
+
+</head>
+<body>
+<div id="documenter_sidebar">
+    <!--<a href="http://www.wowthemes.net" id="documenter_logo"></a>-->
+    <div id="logo" class="group">
+        <a id="textual" href="http://designssquare.com" target="_blank" title="Design Square">
+            Designs <span class="title-highlight">Square</span>
+        </a>
+
+        <p id='tagline' style="text-align: center">Inspiration Designs. Practical Widgets</p>
+    </div>
+    <ol id="documenter_nav">
+        <li><a class="current" href="#documenter_cover">Start</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#hooks">Hooks</a></li>
+        <li><a href="#wraps">Wraps</a></li>
+        <li><a href="#troubleshoot">Troubleshoot</a></li>
+        <li><a href="#backlog">Backlog</a></li>
+        <li><a href="#releases">Releases</a></li>
+
+    </ol>
+    <div id="documenter_copyright">Free of any copyright brought to you by DesignsSquare.com 2014
+    </div>
+</div>
+<div id="documenter_content">
+    <section id="documenter_cover">
+        <h1>CKEDITOR Helper Documentation</h1>
+
+        <h2>Enhancing Drupal Themeing</h2>
+        <hr>
+        <ul>
+            <li>Last Updated: Oct 3, 2014</li>
+            <li>Themed By: DesignsSquare.com</li>
+            <li><a href="">
+            </a>
+            </li>
+            <li>Email: <a href="mailto:contact@designssquare.com">contact@designssquare.com</a></li>
+        </ul>
+        . <p>if you find CKEDITOR Helper valuable, please, tweet about us </p>
+        <i> <a href="https://twitter.com/DesignsSquare">@desginssquare</a></i>
+    </section>
+    <section id="about">
+        <h3>About</h3>
+        <hr>
+        <h4>Issue & Solution</h4>
+
+        <p><b>Issue: </b>
+            There is no standard way for style and pass JS to the CKEDITOR from current Drupal Theme
+        </p>
+
+        <p><b>Solution: </b></p>
+
+        <p>CKEDITOR Helper provides hooks, wraps along anything else for making your Drupal theme look seamless in
+            CKEditor
+        </p>
+        <h4>About</h4>
+
+        <p>The CKeditor Helper was developed to make it easy incorporate your theme styles and front end widget
+            functionality into
+            CKEditor for Drupal. In the following are list of main features:</p>
+        <ol>
+            <li>provides hooks to pass styles, js scripts, js inlines along many other things</li>
+            <li>provides way to pass layouts for any region of your theme</li>
+            <li>Includes around 25 free most popular CKEDITOR plugins</li>
+        </ol>
+    </section>
+    <section id="installation">
+        <h3>Installation</h3>
+        <hr>
+        <h5>Dependencies</h5>
+
+        <p>In the following are dependencies:
+        <ul>
+            <li>DesignsSquare CKEditor Widget</li>
+            <li>Drupal CKeditor module</li>
+        </ul>
+        </p>
+
+        <h5>Steps For Installation</h5>
+
+        <p>In the following are steps to install CKeditor Helper
+        <ol>
+            <li>Enabale CKEDITOR</li>
+            <li>
+                Copy "ckeditor" directory from "DesignsSquare CKEditor Widget" module "library" directory to the
+                sites/all/library/ckeditor directory
+            </li>
+            <li>Enable module - "DesignsSquare CKEditor Widget"</li>
+        </ol>
+        </p>
+    </section>
+    <section id="hooks">
+        <h3>Hooks</h3>
+        <hr>
+        <h4>Hook Overview</h4>
+
+        <p>In the following are hooks provided to pass css styles, js scripts, js inline code,etc all for making
+            CKEditor seamless experience for users </p>
+        <table>
+            <tr>
+                <th>Hook API</th>
+                <th>Arguments</th>
+                <th>Element</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>HOOK_ckeditor_js_scripts_alter(&$js_scripts, $vars)</td>
+                <td>$js_scripts:ARRAY[N]['path']:STRING(path to directory of js script)<br>
+                    $js_scripts:ARRAY[N]['options']['scope']:STRING(i.e. footer, header,etc)<br>
+                    $js_scripts:ARRAY[N]['options']['type']:STRING(i.e. inline,file,etc)<br>
+                    $vars:ARRAY(the $vars variable from HOOK_preprocess_page)<br>
+                </td>
+                <td>JS Scripts</td>
+                <td>for passing js scripts to import in editor. Note: first has to be jQuery lib</td>
+            </tr>
+            <tr>
+                <td>HOOK_ckeditor_js_inline_alter(&$js_inline, $vars)</td>
+                <td>$js_inline:ARRAY[N][]:STRING(inline js code)<br>
+                    $vars:ARRAY(the $vars variable from HOOK_preprocess_page)<br>
+                </td>
+                <td>JS Inline Code</td>
+                <td>for passing js inline code appended last to execute</td>
+            </tr>
+            <tr>
+                <td>HOOK_ckeditor_wrap_alter(&$wraps, $vars, $region)</td>
+                <td>$wraps:[prefix]:STRING(html tags before the editable content for particular regions)<br>
+                    $wraps:[postfix]:STRING(html tags after the editable content for particular regions)<br>
+                    $region:STRING(the name of region)<br>
+                    $vars:ARRAY(the $vars variable from HOOK_preprocess_page)<br>
+                </td>
+                <td>HTML layuout for Regions</td>
+                <td>passing html layout before and after the particular region</td>
+            </tr>
+            <tr>
+                <td>HOOK_ckeditor_body_class_alter(&$body_class, $vars)</td>
+                <td>$body_class:STRING(body tag classes within spaces between)<br>
+                    $vars:ARRAY(the $vars variable from HOOK_preprocess_page)<br>
+                </td>
+                <td>body tag classes</td>
+                <td>passing class values to the body tag</td>
+            </tr>
+            <tr>
+                <td>HOOK_ckeditor_css_alter(&$css_scripts, $vars)</td>
+                <td>$css_scripts[N][]:STRING(path to css style file)<br>
+                    $vars:ARRAY(the $vars variable from HOOK_preprocess_page)<br>
+                </td>
+                <td>CSS Styles</td>
+                <td>list of css styles to import into the editor</td>
+            </tr>
+            <tr>
+                <td>HOOK_ckeditor_clean_elements_alter(&$desposable_elements, $vars){</td>
+                <td>$desposable_elements[N][]:STRING(reference for the element used for jQuery selector i.e ".calendar","div#calendar",etc)<br>
+                    $vars:ARRAY(the $vars variable from HOOK_preprocess_page)<br>
+                </td>
+                <td>DOM Elements</td>
+                <td>list of references to the DOM elements that content needs be removed on clean up</td>
+            </tr>
+        </table>
+
+    </section>
+    <section id="wraps">
+    <h3>Wraps</h3>
+        <hr>
+        <p>when the editor is loading some block within a valid region from current Drupal theme, then it needs the html layout before and after loaded as well to style accordingly.
+        To do so, you will have to specify and supply these html wraps via hook HOOK_ckeditor_wrap_alter(&$wraps, $vars) where the $wraps array contains
+            the 'prefix' and 'postfix' with the layout html to load before and after accordingly. Here is an example:
+            <code><br>
+                function designssquare_com_theme_metronic_ckeditor_wrap_alter(&$content_wrap, $vars, $region){<br>
+                $prefix = '';<br>
+                $postfix = '';<br>
+                <br>
+                switch ($region) {<br>
+                case 'header':<br>
+                $prefix = '<div class="page-header navbar navbar-fixed-top"><div class="page-header-inner"><div class="top-menu"><ul class="nav navbar-nav pull-right ckeditor-wrapper-end">';<br>
+                    $postfix = '</ul></div></div></div>';<br>
+                break;<br>
+                //other regions<br>
+                case 'main': //main content<br>
+                $prefix = '<div class="page-container"><div class="page-content-wrapper"><div class="page-content ckeditor-wrapper-end">';<br>
+                    $postfix = '</div></div></div>';<br>
+                break;<br>
+                }<br>
+                $content_wrap['prefix'] = $prefix;<br>
+                $content_wrap['postfix'] = $postfix;<br>
+                }<br>
+            </code><br>
+            Here, we switch based on the region and then set the html tags that goes before the region at "prefix" index and
+            the html tags that goes after the region are set at 'postfix' index
+        </p>
+        <p><b>IMPORTANT:</b> Make sure you add class name "ckeditor-wrapper-end" at the last html tag as demonstrated above,
+            so the mechanism knows what needs to be removed before saving content</p>
+
+        <p>if you need the name of block, that it is set at the $vars['block-name']</p>
+    </section>
+    <section id="troubleshoot">
+        <h3>Troubleshoot</h3>
+        <hr>
+        <h5>1.@ToDo</h5>
+    </section>
+    <section id="backlog">
+        <h3>Things In Progress</h3>
+        <hr>
+        <ul>
+            <li>@ToDo</li>
+        </ul>
+    </section>
+    <section id="releases">
+        <h3>Release History</h3>
+        <hr>
+        <h5>Release 0.1</h5>
+        <ul>
+            <li>basic functionality with hooks and wraps</li>
+        </ul>
+    </section>
+</div>
+<!--end of documenter_content-->
+</body>
+</html>

@@ -18,7 +18,10 @@ CKEDITOR.plugins.add( 'letterspacing', {
           
           panel: {
             css : [ config.contentsCss, CKEDITOR.getUrl( CKEDITOR.skin.getPath('editor') + 'editor.css' ) ],
-            voiceLabel : lang.panelVoiceLabel
+              voiceLabel : 'undefiend'
+              //@ToDo fix breaks for new version
+//              voiceLabel : (lang == 'undefined') ? '' : lang.panelVoiceLabel
+//              voiceLabel : lang.panelVoiceLabel
           },
           
           init: function() {

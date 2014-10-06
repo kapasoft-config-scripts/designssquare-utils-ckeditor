@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Cascade Flat , Responsive Bootstrap 3.0 Admin Template</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Loading Bootstrap -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+
+  <!-- Loading Stylesheets -->    
+  <link href="css/font-awesome.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+
+  
+  <!-- Loading Custom Stylesheets -->    
+  <link href="css/custom.css" rel="stylesheet">
+  <link href="assets/js/google-code-prettify/prettify.css" rel="stylesheet">
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <style type="text/css">
+ol.linenums {
+  margin: 0 0 0 5px; /* IE indents via margin-left */
+} 
+  </style>
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+      <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <![endif]-->
+  </head>
+  <body  data-spy="scroll" data-target="#navbar-example">
+    <div class="site-holder">
+      <!-- this is a dummy text -->
+      <!-- .navbar -->
+      <nav class="navbar " role="navigation">
+
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"><i class="fa fa-list btn-nav-toggle-responsive text-white"></i> <span class="logo">Cas<strong>ca</strong>de <i class="fa fa-bookmark"></i></span></a>
+        </div>
+
+         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav pull-right">
+      <li><a href="http://bootstrapguru.com/">BootstrapGuru</a></li>
+      <li><a href="http://themeforest.net/user/bootstrapguru/portfolio">More themes</a></li>
+      <li><a href="http://bootstrapguru.com/preview/cascade/index.html">Cascade</a></li>
+      
+      
+    </ul>
+   </div>
+      </nav> <!-- /.navbar -->
+
+      <!-- .box-holder -->
+      <div class="box-holder "style="">
+
+        <!-- .left-sidebar -->
+        <div class="left-sidebar" style="position:fixed; margin-top:-90px; padding-top:90px; ">
+          <div class="sidebar-holder">
+            <ul class="nav  nav-list">
+
+              <!-- sidebar to mini Sidebar toggle -->
+
+
+              <!-- Sidebar header @add class list-subheading for sidebar header -->
+              <li class="list-subheading">Quick Guide</li>
+              <li><a href="#overview" ><i class="fa fa-thumbs-up"></i> Overview</a></li>
+              <li><a href="#installation" ><i class="fa fa-magic"></i> Installation</a></li>
+              <li><a href="#markup" ><i class="fa fa-code"></i> Markup</a></li>
+              <li><a href="#first-page"><i class="fa fa-home"></i> Your First page</a></li>
+              <li><a href="#layout-options" ><i class="fa fa-indent"></i> Layout Options</a></li>
+              
+
+              <!-- Sidebar header @add class list-subheading for sidebar header -->
+              <li class="list-subheading"><span class="hiden-minibar">Advanced</span></li>
+            
+
+              <li class="bg-success"><a href="#dynamic-menu" class="text-white" data-original-title="Icons"><i class="fa fa-list-alt"></i>PHP Dynamic Menu</a></li>
+              <li><a href="#panels" data-original-title="Icons"><i class="fa fa-list-alt"></i>Panels</a></li>
+              <li><a href="#" class="text-success" data-original-title="Icons"><i class="fa fa-stack-overflow"></i>more added based on questions</a></li>
+
+
+
+            </ul>
+          </div>
+        </div> <!-- /.left-sidebar -->
+
+        <!-- .content -->
+        <div class="content">
+          <div class="row">
+            <div class="col-mod-12">
+
+
+              <h2 class="page-header text-success"> First of all, You are awesome!</h3>
+
+              <blockquote class="page-information ">
+                <p>
+                  Yeah I say it from my heart , I am glad you liked my theme and purchased it. I am sure I dont have enough file size to explain how thankful I am . Lets get quickly get into the documentation but  not much quickly finish it, its more detailed :)
+                </p>
+              </blockquote>
+
+              <p class="download-info text-center">You acquired a right to ask anything about this template with the following links, make use of them when you are feeling like you are drowning. <br /><br />
+              <a href="http://bootstrapguru.com/contact" class="btn btn-primary btn-lg">Item Support</a> <a href="http://bootstrapguru.com/forums/forum/archon/" class="btn btn-lg btn-success">Self-hosted Forum</a> </p>
+
+            </div>
+          </div>
+        
+        <div class="row">
+          <div class="col-md-12">
+            <h3 class="page-header" id="overview">Overview</h3>
+          </div>
+          
+          <div class="panel"> 
+            <div class="panel-body">
+                <strong class="text-primary">Cascade</strong> is a admin template built on Twitter Bootstrap 3 with enoromous feautures and highly customisable options. In this documentation I am going to explain the best to make you go easy on the integration. All the best and enjoy coding with <strong class="text-primary">Cascade</strong>
+
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="page-header" id="installation">Installation</h2>
+          </div>
+          
+          <div class="panel"> 
+            <div class="panel-body">
+             So you have the <code>cascade.zip</code> file after downloading from purchased site. Now Unzip the files and copy the following folders to your root working directory
+             <ul>
+              <li><code> Bootstrap </code></li>
+              <li><code> csss </code></li>
+              <li><code> images </code></li>
+              <li><code> fonts </code></li>
+              <li><code> less( only if you want to use less css) </code></li>
+              <li><code> js </code></li>
+              <li><code> partials( only if you want to use php) </code></li>
+             </ul>
+             Next copy the file called <code> template.html ( or template.html)</code> to your working directory. Now you can using the template file as a base file. Continue to read to understand the markup and the structure.
+            </div>
+          </div>
+        </div>
+
+    
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="page-header" id="markup">Markup</h2>
+          </div>
+          
+          <div class="panel"> 
+            <div class="panel-body">
+              First lets see the big Cascade template in a small parts so that we will get a good idea what it is and how it is actually structured. Please make sure you get the whole idea of the below image.
+
+              <br /><br />
+              <div class="text-center"><img src="assets/img/demo.png" width="80%" /></div>
+<br /><br />
+                <div class="row">
+      <div class="col-md-3">
+        <h3>General Markup</h3>
+        <p> The general template structure is the same throughout the template. Here is the general structure.</p>
+      </div>
+
+      <div class="col-md-9">
+        <pre class="prettyprint linenums">
+&lt;!DOCTYPE html&gt;
+  &lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;title&gt;Cascade Flat , Responsive Bootstrap 3.0 Admin Template&lt;/title&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+
+    &lt;!-- Loading Bootstrap --&gt;
+    &lt;link href=&quot;css/bootstrap.css&quot; rel=&quot;stylesheet&quot;&gt;
+
+    &lt;!-- Loading Stylesheets --&gt;    
+    &lt;link href=&quot;css/font-awesome.css&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;link href=&quot;css/style.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt; 
+
+    &lt;link href=&quot;less/style.less&quot; rel=&quot;stylesheet&quot;  title=&quot;lessCss&quot; id=&quot;lessCss&quot;&gt;
+
+    &lt;!-- Loading Custom Stylesheets --&gt;    
+    &lt;link href=&quot;css/custom.css&quot; rel=&quot;stylesheet&quot;&gt;
+
+    &lt;link rel=&quot;shortcut icon&quot; href=&quot;images/favicon.ico&quot;&gt;
+
+    &lt;!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. --&gt;
+      &lt;!--[if lt IE 9]&gt;
+      &lt;script src=&quot;js/html5shiv.js&quot;&gt;&lt;/script&gt;
+      &lt;![endif]--&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;div class=&quot;site-holder&quot;&gt;
+
+        &lt;!-- .navbar --&gt;
+        &lt;nav class=&quot;navbar&quot; &gt;
+
+
+        &lt;/nav&gt; &lt;!-- /.navbar --&gt;
+
+        &lt;!-- .box-holder --&gt;
+        &lt;div class=&quot;box-holder&quot;&gt;
+
+          &lt;!-- .left-sidebar --&gt;
+          &lt;div class=&quot;left-sidebar&quot;&gt;
+            &lt;div class=&quot;sidebar-holder&quot;&gt;
+
+            &lt;/div&gt;&lt;!-- /.left-sidebar Holder--&gt;
+          &lt;/div&gt; &lt;!-- /.left-sidebar --&gt;
+
+          &lt;!-- .content --&gt;
+          &lt;div class=&quot;content&quot;&gt;
+
+
+            @content
+
+            &lt;div class=&quot;footer&quot;&gt;
+              @footer
+            &lt;/div&gt;
+
+          &lt;/div&gt; &lt;!-- /.content --&gt;
+
+          &lt;!-- .right-sidebar --&gt;
+          &lt;div class=&quot;right-sidebar right-sidebar-hidden&quot;&gt;
+            &lt;div class=&quot;right-sidebar-holder&quot;&gt;
+
+             @right Side Content
+
+
+           &lt;/div&gt;  &lt;!-- /.right-sidebar-holder --&gt;
+         &lt;/div&gt;  &lt;!-- /.right-sidebar --&gt;
+
+
+       &lt;/div&gt; &lt;!-- /.box-holder --&gt;
+     &lt;/div&gt;&lt;!-- /.site-holder --&gt;
+
+
+
+     &lt;!-- Load JS here for Faster site load =============================--&gt;
+
+
+   &lt;/body&gt;
+   &lt;/html&gt;</pre>
+      </div>
+    </div>
+
+
+    <hr />
+    <div class="row">
+        <div class="col-md-3">
+          <h3>Template file sections</h3>
+          <p><strong class="text-primary">Cascade</strong> admin template comes with a well documented code. Check the sections one by one , template.html is demonstrated below</p>
+        </div>
+
+        <div class="col-md-9">
+          <h3 class="text-primary">Start:</h3>
+          <pre class="prettyprint linenums">&lt;!DOCTYPE html&gt;<br/>&lt;html lang=&quot;en&quot;&gt;</pre>
+
+          <h3 class="text-primary">Page Head:</h3>
+          <pre class="prettyprint linenums">&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;Cascade Flat , Responsive Bootstrap 3.0 Admin Template&lt;/title&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+
+  &lt;!-- Loading Bootstrap --&gt;
+  &lt;link href=&quot;css/bootstrap.css&quot; rel=&quot;stylesheet&quot;&gt;
+
+  &lt;!-- Loading Stylesheets --&gt;    
+  &lt;link href=&quot;css/font-awesome.css&quot; rel=&quot;stylesheet&quot;&gt;
+   &lt;link href=&quot;css/style.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot;&gt; 
+
+  &lt;link href=&quot;less/style.less&quot; rel=&quot;stylesheet&quot;  title=&quot;lessCss&quot; id=&quot;lessCss&quot;&gt;
+  
+  &lt;!-- Loading Custom Stylesheets --&gt;    
+  &lt;link href=&quot;css/custom.css&quot; rel=&quot;stylesheet&quot;&gt;
+
+  &lt;link rel=&quot;shortcut icon&quot; href=&quot;images/favicon.ico&quot;&gt;
+
+  &lt;!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. --&gt;
+      &lt;!--[if lt IE 9]&gt;
+      &lt;script src=&quot;js/html5shiv.js&quot;&gt;&lt;/script&gt;
+      &lt;![endif]--&gt;
+&lt;/head&gt;
+</pre>
+
+              
+      <h3 class="text-primary">Body Start:</h3>
+          <pre class="prettyprint linenums">    &lt;body&gt;
+      &lt;div class=&quot;site-holder&quot;&gt;
+</pre>
+
+  <h3 class="text-primary">Top Navigation</h3>
+          <pre class="prettyprint linenums">   &lt;nav class=&quot;navbar&quot; role=&quot;navigation&quot;&gt;
+
+          &lt;!-- Brand and toggle get grouped for better mobile display --&gt;
+          &lt;div class=&quot;navbar-header&quot;&gt;
+            &lt;a class=&quot;navbar-brand&quot; href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-list btn-nav-toggle-responsive text-white&quot;&gt;&lt;/i&gt; &lt;span class=&quot;logo&quot;&gt;Cas&lt;strong&gt;ca&lt;/strong&gt;de &lt;i class=&quot;fa fa-bookmark&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;/a&gt;
+          &lt;/div&gt;
+          
+          &lt;!-- Collect the nav links, forms, and other content for toggling --&gt;
+          &lt;div class=&quot;collapse navbar-collapse&quot;&gt;
+            &lt;ul class=&quot;nav navbar-nav user-menu navbar-right &quot;&gt;
+
+              &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;user dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;&lt;span class=&quot;username&quot;&gt;&lt;img src=&quot;images/profiles/eleven.png&quot; class=&quot;user-avatar&quot; alt=&quot;&quot;&gt;  Vijay Kumar &lt;/span&gt;&lt;/a&gt;
+                &lt;ul class=&quot;dropdown-menu&quot;&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-user&quot;&gt;&lt;/i&gt; My Profile&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-envelope&quot;&gt;&lt;/i&gt; Inbox&lt;/a&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;fa fa-cogs&quot;&gt;&lt;/i&gt; Settings&lt;/a&gt;&lt;/li&gt;
+                  &lt;li class=&quot;divider&quot;&gt;&lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;text-danger&quot;&gt;&lt;i class=&quot;fa fa-lock&quot;&gt;&lt;/i&gt; Logout&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;settings dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;&lt;i class=&quot;fa fa-envelope&quot;&gt;&lt;/i&gt;&lt;span class=&quot;badge bg-pink&quot;&gt;4&lt;/span&gt;&lt;/a&gt;
+                  &lt;ul class=&quot;dropdown-menu inbox&quot;&gt;
+                    &lt;li&gt;
+                      &lt;a href=&quot;inbox.html&quot;&gt;     
+                        &lt;img src=&quot;images/profiles/three.png&quot; alt=&quot;&quot; class=&quot;avatar&quot;&gt;
+                        &lt;div class=&quot;message&quot;&gt;
+                          &lt;span class=&quot;username&quot;&gt;John Deo&lt;/span&gt; 
+                          &lt;span class=&quot;mini-details&quot;&gt;(6) &lt;i class=&quot;fa fa-paper-clip&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                          &lt;span class=&quot;time pull-right&quot;&gt; &lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt; 06:58 PM&lt;/span&gt;
+                          &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's ... &lt;/p&gt;
+                        &lt;/div&gt;
+                      &lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                      &lt;a href=&quot;inbox.html&quot;&gt;     
+                        &lt;img src=&quot;images/profiles/four.png&quot; alt=&quot;&quot; class=&quot;avatar&quot;&gt;
+                        &lt;div class=&quot;message&quot;&gt;
+                          &lt;span class=&quot;username&quot;&gt;Jane Deo&lt;/span&gt; 
+                          &lt;span class=&quot;mini-details&quot;&gt;(6) &lt;i class=&quot;fa fa-paper-clip&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                          &lt;span class=&quot;time pull-right&quot;&gt; &lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt; 06:58 PM&lt;/span&gt;
+                          &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's ... &lt;/p&gt;
+                        &lt;/div&gt;
+                      &lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                      &lt;a href=&quot;inbox.html&quot;&gt;     
+                        &lt;img src=&quot;images/profiles/five.png&quot; alt=&quot;&quot; class=&quot;avatar&quot;&gt;
+                        &lt;div class=&quot;message&quot;&gt;
+                          &lt;span class=&quot;username&quot;&gt;Mr Deo&lt;/span&gt; 
+                          &lt;span class=&quot;mini-details&quot;&gt;(6) &lt;i class=&quot;fa fa-paper-clip&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                          &lt;span class=&quot;time pull-right&quot;&gt; &lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt; 06:58 PM&lt;/span&gt;
+                          &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's ... &lt;/p&gt;
+                        &lt;/div&gt;
+                      &lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                      &lt;a href=&quot;inbox.html&quot;&gt;     
+                        &lt;img src=&quot;images/profiles/six.png&quot; alt=&quot;&quot; class=&quot;avatar&quot;&gt;
+                        &lt;div class=&quot;message&quot;&gt;
+                          &lt;span class=&quot;username&quot;&gt;Miss Deo&lt;/span&gt; 
+                          &lt;span class=&quot;mini-details&quot;&gt;(6) &lt;i class=&quot;fa fa-paper-clip&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+                          &lt;span class=&quot;time pull-right&quot;&gt; &lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt; 06:58 PM&lt;/span&gt;
+                          &lt;p&gt;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's ... &lt;/p&gt;
+                        &lt;/div&gt;
+                      &lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;inbox.html&quot; class=&quot;btn bg-primary&quot;&gt;View All&lt;/a&gt;&lt;/li&gt;
+                  &lt;/ul&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;settings dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;&gt;&lt;i class=&quot;fa fa-bell animated shake&quot;&gt;&lt;/i&gt;&lt;span class=&quot;badge bg-success&quot;&gt;10&lt;/span&gt;&lt;/a&gt;
+                    &lt;ul class=&quot;dropdown-menu notifications&quot;&gt;
+                      &lt;li&gt;
+                        &lt;a href=&quot;#&quot;&gt;
+                          &lt;i class=&quot;fa fa-user noty-icon bg-primary&quot;&gt;&lt;/i&gt; 
+                          &lt;span class=&quot;description&quot;&gt;10 Users are registered&lt;/span&gt;
+                          &lt;span class=&quot;time&quot;&gt; &lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt; 06:58 PM&lt;/span&gt;
+                        &lt;/a&gt;
+                      &lt;/li&gt;
+                      &lt;li&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;text-danger&quot;&gt;
+                          &lt;i class=&quot;fa fa-inbox noty-icon bg-pink&quot;&gt;&lt;/i&gt; 
+                          &lt;span class=&quot;description&quot;&gt;Your disk space has been exceeeded&lt;/span&gt;
+                          &lt;span class=&quot;time&quot;&gt; &lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt; 06:58 PM&lt;/span&gt;
+                        &lt;/a&gt;
+                      &lt;/li&gt;
+                      &lt;li&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;text-info&quot;&gt;
+                          &lt;i class=&quot;fa fa-comment noty-icon bg-purple&quot;&gt;&lt;/i&gt; 
+                          &lt;span class=&quot;description&quot;&gt;58 new comments&lt;/span&gt;
+                          &lt;span class=&quot;time&quot;&gt; &lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt; 06:58 PM&lt;/span&gt;
+                        &lt;/a&gt;
+                      &lt;/li&gt;
+                      &lt;li&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;text-warning&quot;&gt;
+                          &lt;i class=&quot;fa fa-user noty-icon bg-warning&quot;&gt;&lt;/i&gt; 
+                          &lt;span class=&quot;description&quot;&gt;User deleted&lt;/span&gt;
+                          &lt;span class=&quot;time&quot;&gt; &lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt; 06:58 PM&lt;/span&gt;
+                        &lt;/a&gt;
+                      &lt;/li&gt;
+                      &lt;li&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;text-success&quot;&gt;
+                          &lt;i class=&quot;fa fa-bookmark-o noty-icon bg-seagreen&quot;&gt;&lt;/i&gt; 
+                          &lt;span class=&quot;description&quot;&gt;You have a new badge&lt;/span&gt;
+                          &lt;span class=&quot;time&quot;&gt; &lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt; 06:58 PM&lt;/span&gt;
+                        &lt;/a&gt;
+                      &lt;/li&gt;
+                      &lt;li&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;text-info&quot;&gt;
+                          &lt;i class=&quot;fa fa-envelope noty-icon bg-info&quot;&gt;&lt;/i&gt; 
+                          &lt;span class=&quot;description&quot;&gt;24 Unread mails&lt;/span&gt;
+                          &lt;span class=&quot;time&quot;&gt; &lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt; 06:58 PM&lt;/span&gt;
+                        &lt;/a&gt;
+                      &lt;/li&gt;
+                      &lt;li&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;text-success&quot;&gt;
+                          &lt;i class=&quot;fa fa-link noty-icon bg-purple&quot;&gt;&lt;/i&gt; 
+                          &lt;span class=&quot;description&quot;&gt;Urls forwarding activated&lt;/span&gt;
+                          &lt;span class=&quot;time&quot;&gt; &lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt; 06:58 PM&lt;/span&gt;
+                        &lt;/a&gt;
+                      &lt;/li&gt;
+                      &lt;li&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;text-warning&quot;&gt;
+                          &lt;i class=&quot;fa fa-clock-o noty-icon bg-yellow&quot;&gt;&lt;/i&gt; 
+                          &lt;span class=&quot;description&quot;&gt;Action&lt;/span&gt;
+                          &lt;span class=&quot;time&quot;&gt; &lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt; 06:58 PM&lt;/span&gt;
+                        &lt;/a&gt;
+                      &lt;/li&gt;
+                      &lt;li&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;text-danger&quot;&gt;
+                          &lt;i class=&quot;fa fa-exclamation noty-icon bg-danger&quot;&gt;&lt;/i&gt; 
+                          &lt;span class=&quot;description&quot;&gt;3 domains expired&lt;/span&gt;
+                          &lt;span class=&quot;time&quot;&gt; &lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt; 06:58 PM&lt;/span&gt;
+                        &lt;/a&gt;
+                      &lt;/li&gt;
+                      &lt;li&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;text-success&quot;&gt;
+                          &lt;i class=&quot;fa fa-clock-o noty-icon bg-success&quot;&gt;&lt;/i&gt; 
+                          &lt;span class=&quot;description&quot;&gt;Your have $950 as outstanding amount&lt;/span&gt;
+                          &lt;span class=&quot;time&quot;&gt; &lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt; 06:58 PM&lt;/span&gt;
+                        &lt;/a&gt;
+                      &lt;/li&gt;
+                      
+                      &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;btn bg-primary&quot;&gt;View All&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                  &lt;/li&gt;
+                  &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;settings&quot;&gt;&lt;i class=&quot;fa fa-indent settings-toggle&quot;&gt;&lt;/i&gt;&lt;span class=&quot;badge bg-info&quot;&gt;20&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+              &lt;/div&gt;&lt;!-- /.navbar-collapse --&gt;
+            &lt;/nav&gt; &lt;!-- /.navbar --&gt;
+
+</pre>
+
+  <h3 class="text-primary">Box Start: <span class="small"> ( This holds the leftsidebar,content and rightsidebar) </span></h3>
+          <pre class="prettyprint linenums"> &lt;!-- .box-holder --&gt;
+            &lt;div class=&quot;box-holder&quot;&gt;
+
+</pre>
+
+  
+  <h3 class="text-primary">Body Start:</h3>
+          <pre class="prettyprint linenums"> &lt;body&gt;
+ &lt;div class=&quot;site-holder&quot;&gt;
+</pre>
+
+  
+  <h3 class="text-primary">Left Sidebar: <span class="small text-info"> first declare .left-sidebar and then child is .left-sidebar-holder.</span></h3>
+          <pre class="prettyprint linenums">  &lt;!-- .left-sidebar --&gt;
+              &lt;div class=&quot;left-sidebar&quot;&gt;
+                &lt;div class=&quot;sidebar-holder&quot;&gt;
+                  &lt;ul class=&quot;nav  nav-list&quot;&gt;
+
+                    &lt;!-- sidebar to mini Sidebar toggle --&gt;
+                    &lt;li class=&quot;nav-toggle&quot;&gt;
+                      &lt;button class=&quot;btn  btn-nav-toggle text-primary&quot;&gt;&lt;i class=&quot;fa fa-angle-double-left toggle-left&quot;&gt;&lt;/i&gt; &lt;/button&gt;
+                    &lt;/li&gt;
+
+
+                    &lt;!-- Sidebar header @add class list-subheading for sidebar header --&gt;
+                    &lt;li class=&quot;list-subheading&quot;&gt;&lt;span class=&quot;hiden-minibar&quot;&gt;Overview&lt;/span&gt;&lt;/li&gt;
+                    &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;index.html&quot; data-original-title=&quot;Dashboard&quot;&gt;&lt;i class=&quot;fa fa-dashboard&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Dashboard &lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=&quot;#&quot; data-original-title=&quot;Cascade&quot;&gt;&lt;i class=&quot;fa fa-group&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Cascade&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+
+                    &lt;li&gt;
+                      &lt;a class=&quot;dropdown&quot; href=&quot;#&quot; data-original-title=&quot;Pages&quot;&gt;&lt;i class=&quot;fa fa-book&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt;  Pages &lt;span class=&quot;badge bg-primary pull-right&quot;&gt;14&lt;/span&gt;&lt;/a&gt;
+                      &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;calendar.html&quot; data-original-title=&quot;Calendar&quot;&gt;&lt;i class=&quot;fa fa-calendar&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Calendar&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;chat.html&quot; data-original-title=&quot;Calendar&quot;&gt;&lt;i class=&quot;fa fa-comment&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Chat&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;profile.html&quot; data-original-title=&quot;Profile&quot;&gt;&lt;i class=&quot;fa fa-th&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Profile Activity&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;profile-two.html&quot; data-original-title=&quot;Profile Two&quot;&gt;&lt;i class=&quot;fa fa-th&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Profile Posts&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;gallery.html&quot; data-original-title=&quot;Gallery&quot;&gt;&lt;i class=&quot;fa fa-th&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Gallery&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;grids.html&quot; data-original-title=&quot;Grids&quot;&gt;&lt;i class=&quot;fa fa-th-large&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Grids&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;helpers.html&quot; data-original-title=&quot;Helpers&quot;&gt;&lt;i class=&quot;fa fa-shield&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Helpers&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;images.html&quot; data-original-title=&quot;Images&quot;&gt;&lt;i class=&quot;fa fa-picture-o&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Images&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;inbox.html&quot; data-original-title=&quot;Inbox&quot;&gt;&lt;i class=&quot;fa fa-envelope&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Inbox&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;invoice.html&quot; data-original-title=&quot;Invoice&quot;&gt;&lt;i class=&quot;fa fa-credit-card&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Invoice&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;pricing-table.html&quot; data-original-title=&quot;Pricing Table&quot;&gt;&lt;i class=&quot;fa fa-money&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Pricing Table&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;support.html&quot; data-original-title=&quot;Support&quot;&gt;&lt;i class=&quot;fa fa-gears&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Support&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;timeline.html&quot; data-original-title=&quot;Timeline&quot;&gt;&lt;i class=&quot;fa fa-clock-o&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Timeline&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;typography.html&quot; data-original-title=&quot;Typography&quot;&gt;&lt;i class=&quot;fa fa-text-width&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Typography&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                      &lt;/ul&gt;
+                    &lt;/li&gt;
+
+                    &lt;li&gt;
+                      &lt;a class=&quot;dropdown&quot; href=&quot;#&quot; data-original-title=&quot;Utility&quot;&gt;&lt;i class=&quot;fa fa-tint&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt;  Utility &lt;span class=&quot;badge bg-primary pull-right&quot;&gt;7&lt;/span&gt;&lt;/a&gt;
+                      &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;404.html&quot; data-original-title=&quot;404&quot;&gt;&lt;i class=&quot;fa fa-exclamation-circle&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; 404 Error Page&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;505.html&quot; data-original-title=&quot;505&quot;&gt;&lt;i class=&quot;fa fa-exclamation-circle&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; 505 Error Page&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;faq.html&quot; data-original-title=&quot;FAQ&quot;&gt;&lt;i class=&quot;fa fa-question&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; FAQ&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;screens.html&quot; data-original-title=&quot;Lock Screen&quot;&gt;&lt;i class=&quot;fa fa-lock&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Lock Screen&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;screens.html&quot; data-original-title=&quot;LogIn&quot;&gt;&lt;i class=&quot;fa fa-sign-in&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Log In&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;screens.html&quot; data-original-title=&quot;SignUp&quot;&gt;&lt;i class=&quot;fa fa-smile-o&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Sign Up&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;template.html&quot; data-original-title=&quot;Template&quot;&gt;&lt;i class=&quot;fa fa-pagelines&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Template Page&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                      &lt;/ul&gt; 
+                    &lt;/li&gt;
+                    &lt;!-- Sidebar header @add class list-subheading for sidebar header --&gt;
+                    &lt;li class=&quot;list-subheading&quot;&gt;&lt;span class=&quot;hiden-minibar&quot;&gt;Components&lt;/span&gt;&lt;/li&gt;
+                    &lt;li&gt; &lt;!-- Example for second level menu --&gt;
+                      &lt;a class=&quot;dropdown&quot; href=&quot;#&quot; data-original-title=&quot;UI Elements&quot;&gt;&lt;i class=&quot;fa fa-user&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt;  UI Elements &lt;span class=&quot;badge bg-primary pull-right&quot;&gt;17&lt;/span&gt;&lt;/a&gt;
+                      &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;alerts.html&quot; data-original-title=&quot;Alerts&quot;&gt;&lt;i class=&quot;fa fa-exclamation-triangle&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Alerts&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;animations.html&quot; data-original-title=&quot;Animations&quot;&gt;&lt;i class=&quot;fa fa-font&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Animations&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;breadcrumbs-jumbotron.html&quot; data-original-title=&quot;Breadcrumbs&quot;&gt;&lt;i class=&quot;fa fa-chain&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Breadcrumbs &amp;amp; Jumbo&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;buttons.html&quot; data-original-title=&quot;Buttons&quot;&gt;&lt;i class=&quot;fa fa-sort&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Buttons &lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;carousel.html&quot; data-original-title=&quot;carousel&quot;&gt;&lt;i class=&quot;fa fa-coffee&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Carousel&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;notifications.html&quot; data-original-title=&quot;Notifications&quot;&gt;&lt;i class=&quot;fa fa-bell-o&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Notifications&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;knobs.html&quot; data-original-title=&quot;Knobs&quot;&gt;&lt;i class=&quot;fa fa-dot-circle-o&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Knobs&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;labels-badges.html&quot; data-original-title=&quot;Labels&quot;&gt;&lt;i class=&quot;fa fa-phone-square&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Labels &amp;amp; badges&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;list-groups.html&quot; data-original-title=&quot;List Groups&quot;&gt;&lt;i class=&quot;fa fa-list&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; List Groups&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;pagination.html&quot; data-original-title=&quot;Pagination&quot;&gt;&lt;i class=&quot;fa fa-sort-numeric-asc&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Pagination&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;panels.html&quot; data-original-title=&quot;Panels&quot;&gt;&lt;i class=&quot;fa fa-windows&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Panels&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;progress-bars.html&quot; data-original-title=&quot;Progress&quot;&gt;&lt;i class=&quot;fa fa-ruble&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Progress Bars&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;sliders.html&quot; data-original-title=&quot;Sliders&quot;&gt;&lt;i class=&quot;fa fa-exchange&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Sliders&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;tabs-accordians.html&quot; data-original-title=&quot;Tabs&quot;&gt;&lt;i class=&quot;fa fa-check&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Tabs &amp;amp; Accordians&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;info-boxes.html&quot; data-original-title=&quot;Info Boxes&quot;&gt;&lt;i class=&quot;fa fa-bullseye&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Info Boxes&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;tooltips-popovers.html&quot; data-original-title=&quot;Tooltips&quot;&gt;&lt;i class=&quot;fa fa-asterisk&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Tooltips &amp;amp; popovers&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;wells.html&quot; data-original-title=&quot;Wells&quot;&gt;&lt;i class=&quot;fa fa-beer&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Wells&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                      &lt;/ul&gt;
+                    &lt;/li&gt;    
+
+                    &lt;li&gt; &lt;!-- Example for second level menu --&gt;
+                      &lt;a class=&quot;dropdown&quot; href=&quot;#&quot; data-original-title=&quot;Tables&quot;&gt;&lt;i class=&quot;fa fa-table&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt;  Tables &lt;span class=&quot;badge bg-primary pull-right&quot;&gt;3&lt;/span&gt;&lt;/a&gt;
+                      &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;basic-tables.html&quot; data-original-title=&quot;Basic&quot;&gt;&lt;i class=&quot;fa fa-table&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt;  Basic Tables&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;editable-tables.html&quot; data-original-title=&quot;Editable&quot;&gt;&lt;i class=&quot;fa fa-table&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt;  Editable Tables&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;dynamic-tables.html&quot; data-original-title=&quot;Dynamic&quot;&gt;&lt;i class=&quot;fa fa-table&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt;  Dynamic Tables&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                      &lt;/ul&gt; 
+                    &lt;/li&gt;
+
+                    &lt;li&gt; &lt;!-- Example for Third level menu --&gt;
+                      &lt;a class=&quot;dropdown&quot; href=&quot;#&quot; data-original-title=&quot;Unlimited Menu&quot;&gt;&lt;i class=&quot;fa fa-sitemap&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Unlimited Menu &lt;span class=&quot;badge bg-primary pull-right&quot;&gt;3&lt;/span&gt;&lt;/a&gt;
+                      &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot; data-original-title=&quot;SubMenu&quot;&gt;&lt;i class=&quot;fa fa-android&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Submenu &lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;#&quot; data-original-title=&quot;SubMenu&quot;&gt;&lt;i class=&quot;fa fa-apple&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Submenu &lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;
+                          &lt;a class=&quot;dropdown&quot; href=&quot;#&quot; data-original-title=&quot;One More&quot;&gt;&lt;i class=&quot;fa fa-windows&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; One More &lt;span class=&quot;badge bg-primary pull-right&quot;&gt;3&lt;/span&gt;&lt;/a&gt;
+                          &lt;ul&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot; data-original-title=&quot;SubMenu&quot;&gt;&lt;i class=&quot;fa fa-facebook-square&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Submenu &lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=&quot;#&quot; data-original-title=&quot;SubMenu&quot;&gt;&lt;i class=&quot;fa fa-google-plus-square&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Submenu &lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;
+                              &lt;a class=&quot;dropdown&quot; href=&quot;#&quot; data-original-title=&quot;More Here&quot;&gt;&lt;i class=&quot;fa fa-twitter-square&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; More here &lt;span class=&quot;badge bg-primary pull-right&quot;&gt;3&lt;/span&gt;&lt;/a&gt;
+                              &lt;ul&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot; data-original-title=&quot;SubMenu&quot;&gt;&lt;i class=&quot;fa fa-flickr&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Submenu &lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot; data-original-title=&quot;SubMenu&quot;&gt;&lt;i class=&quot;fa fa-pinterest&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Submenu &lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot; data-original-title=&quot;Add More&quot;&gt;&lt;i class=&quot;fa fa-linkedin-square&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt;More.. trust me &lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                              &lt;/ul&gt; 
+                            &lt;/li&gt;
+                          &lt;/ul&gt; 
+                        &lt;/li&gt;
+                      &lt;/ul&gt; 
+                    &lt;/li&gt;
+
+                    &lt;li&gt;
+                      &lt;a class=&quot;dropdown&quot; href=&quot;#&quot; data-original-title=&quot;Forms&quot;&gt;&lt;i class=&quot;fa fa-list-alt&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Forms  &lt;span class=&quot;badge bg-primary pull-right&quot;&gt;9&lt;/span&gt;&lt;/a&gt;
+                      &lt;ul&gt;
+                        &lt;li &gt;&lt;a href=&quot;dropzone-file-upload.html&quot; data-original-title=&quot;Dropzone&quot;&gt;&lt;i class=&quot;fa fa-level-down&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt;  Dropzone File Upload&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;form-input-masks.html&quot; data-original-title=&quot;Input Masks&quot;&gt;&lt;i class=&quot;fa fa-pencil-square&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Form Input Masks&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;form-validation.html&quot; data-original-title=&quot;validation&quot;&gt;&lt;i class=&quot;fa fa-warning&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Form Validation&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;form-wizard.html&quot; data-original-title=&quot;Form wizard&quot;&gt;&lt;i class=&quot;fa fa-indent&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt;  Form Wizard&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;input-groups.html&quot; data-original-title=&quot;Input Groups&quot;&gt;&lt;i class=&quot;fa fa-group&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Input Groups&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;layouts-elements.html&quot; data-original-title=&quot;Form Elements&quot;&gt;&lt;i class=&quot;fa fa-indent&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt;  Layouts &amp;amp; elements&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;multiple-file-upload.html&quot; data-original-title=&quot;File Upload&quot;&gt;&lt;i class=&quot;fa fa-cloud-upload&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt;  Multiple File Upload&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;pickers.html&quot; data-original-title=&quot;Pickers&quot;&gt;&lt;i class=&quot;fa fa-eye&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt;  Pickers&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;wysiwyg-markdown.html&quot; data-original-title=&quot;Wysiwyg &amp;amp; Markdown&quot;&gt;&lt;i class=&quot;fa fa-pencil-square&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Wysiwyg &amp;amp; Markdown&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                      &lt;/ul&gt; 
+                    &lt;/li&gt;
+
+                    &lt;li&gt;
+                      &lt;a class=&quot;dropdown&quot; href=&quot;#&quot; data-original-title=&quot;Charts&quot;&gt;&lt;i class=&quot;fa fa-bar-chart-o&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Charts  &lt;span class=&quot;badge bg-primary pull-right&quot;&gt;6&lt;/span&gt;&lt;/a&gt;
+                      &lt;ul&gt;
+                        &lt;li &gt;&lt;a href=&quot;basic-charts.html&quot; data-original-title=&quot;Basic Charts&quot;&gt;&lt;i class=&quot;fa fa-bar-chart-o&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt;  Basic Charts&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;live-charts.html&quot; data-original-title=&quot;Live Charts&quot;&gt;&lt;i class=&quot;fa fa-bar-chart-o&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Live Charts&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;morris.html&quot; data-original-title=&quot;Morris Charts&quot;&gt;&lt;i class=&quot;fa fa-bar-chart-o&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Morris Charts&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;pie-charts.html&quot; data-original-title=&quot;Pie Charts&quot;&gt;&lt;i class=&quot;fa fa-bar-chart-o&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt;  Pie Charts&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;sparklines.html&quot; data-original-title=&quot;Spark Lines&quot;&gt;&lt;i class=&quot;fa fa-bar-chart-o&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt;  Spark Lines&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;nvd3.html&quot; data-original-title=&quot;NVD3&quot;&gt;&lt;i class=&quot;fa fa-bar-chart-o&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt;  NVD3&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                      &lt;/ul&gt; 
+                    &lt;/li&gt;
+
+                    &lt;li&gt;
+                      &lt;a class=&quot;dropdown&quot; href=&quot;#&quot; data-original-title=&quot;Maps&quot;&gt;&lt;i class=&quot;fa fa-map-marker&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Maps  &lt;span class=&quot;badge bg-primary pull-right&quot;&gt;2&lt;/span&gt;&lt;/a&gt;
+                      &lt;ul&gt;
+                        &lt;li&gt;&lt;a href=&quot;google-maps.html&quot; data-original-title=&quot;Google Maps&quot;&gt;&lt;i class=&quot;fa fa-google-plus&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Google Maps&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                        &lt;li&gt;&lt;a href=&quot;vector-maps.html&quot; data-original-title=&quot;Vector Maps&quot;&gt;&lt;i class=&quot;fa fa-vimeo-square&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Vector Maps&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+                      &lt;/ul&gt; 
+                    &lt;/li&gt;
+
+                    &lt;li&gt;&lt;a href=&quot;icons.html&quot; data-original-title=&quot;Icons&quot;&gt;&lt;i class=&quot;fa fa-truck&quot;&gt;&lt;/i&gt;&lt;span class=&quot;hidden-minibar&quot;&gt; Icons&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+
+
+                  &lt;/ul&gt;
+                &lt;/div&gt;
+              &lt;/div&gt; &lt;!-- /.left-sidebar --&gt;
+</pre>
+
+  
+  <h3 class="text-primary">Content</h3>
+          <pre class="prettyprint linenums">  &lt;!-- .content --&gt;
+              &lt;div class=&quot;content&quot;&gt;
+                @content goes here
+               &lt;div class=&quot;footer&quot;&gt;   &lt;/div&gt;
+              &lt;/div&gt; &lt;!-- /.content --&gt;
+
+</pre>
+
+  
+  <h3 class="text-primary">RightSidebar <span class="small text-info"> first declare .right-sidebar and then child is .right-sidebar-holder.</span></h3>
+          <pre class="prettyprint linenums">&lt;!-- .right-sidebar --&gt;
+&lt;div class=&quot;right-sidebar right-sidebar-hidden&quot;&gt;
+  &lt;div class=&quot;right-sidebar-holder&quot;&gt;
+
+    &lt;!-- @Demo part only The part from here can be removed till end of the @demo  --&gt;
+    &lt;a href=&quot;login.html&quot; class=&quot;btn btn-danger btn-block&quot;&gt;Logout &lt;/a&gt;
+
+
+    &lt;h4 class=&quot;page-header text-primary text-center&quot;&gt;
+      Theme Options
+      &lt;a  href=&quot;#&quot;  class=&quot;theme-panel-close text-primary pull-right&quot;&gt;&lt;strong&gt;&lt;i class=&quot;fa fa-times&quot;&gt;&lt;/i&gt;&lt;/strong&gt;&lt;/a&gt;
+    &lt;/h4&gt;
+
+    &lt;ul class=&quot;list-group theme-options&quot;&gt;
+      &lt;li class=&quot;list-group-item&quot; href=&quot;#&quot;&gt; 
+        &lt;div class=&quot;checkbox&quot;&gt;
+          &lt;label&gt;
+            &lt;input type=&quot;checkbox&quot; id=&quot;fixedNavbar&quot; value=&quot;&quot;&gt; Fixed Top Navbar
+          &lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;checkbox&quot;&gt;
+          &lt;label&gt;
+            &lt;input type=&quot;checkbox&quot; id=&quot;fixedNavbarBottom&quot; value=&quot;&quot;&gt; Fixed Bottom Navbar
+          &lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;checkbox&quot;&gt;
+          &lt;label&gt;
+            &lt;input type=&quot;checkbox&quot; id=&quot;boxed&quot; value=&quot;&quot;&gt; Boxed Version
+          &lt;/label&gt;
+        &lt;/div&gt;
+        
+          &lt;div class=&quot;form-group backgroundImage hidden&quot; &gt;
+            &lt;label class=&quot;control-label&quot;&gt;Paste Image Url and then hit enter&lt;/label&gt;
+              &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;backgroundImageUrl&quot; /&gt;
+          &lt;/div&gt;
+        &lt;!-- 
+        &lt;div class=&quot;checkbox&quot;&gt;
+          &lt;label&gt;
+            &lt;input type=&quot;checkbox&quot; id=&quot;responsive&quot; value=&quot;&quot;&gt; Disable Responsiveness
+          &lt;/label&gt;
+        &lt;/div&gt; 
+      --&gt;      
+    &lt;/li&gt;
+    &lt;li class=&quot;list-group-item&quot; href=&quot;#&quot;&gt;Predefined Themes
+      &lt;ul class=&quot;list-inline predefined-themes&quot;&gt; 
+        &lt;li&gt;&lt;a class=&quot;badge&quot; style=&quot;background-color:#54b5df&quot; data-color-primary=&quot;#54b5df&quot; data-color-secondary=&quot;#2f4051&quot; data-color-link=&quot;#FFFFFF&quot;&gt; &amp;nbsp; &lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class=&quot;badge&quot; style=&quot;background-color:#d85f5c&quot; data-color-primary=&quot;#d85f5c&quot; data-color-secondary=&quot;#f0f0f0&quot; data-color-link=&quot;#474747&quot;&gt; &amp;nbsp; &lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class=&quot;badge&quot; style=&quot;background-color:#3d4a5d&quot; data-color-primary=&quot;#3d4a5d&quot; data-color-secondary=&quot;#edf0f1&quot; data-color-link=&quot;#777e88&quot;&gt; &amp;nbsp; &lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class=&quot;badge&quot; style=&quot;background-color:#A0B448&quot; data-color-primary=&quot;#A0B448&quot; data-color-secondary=&quot;#485257&quot; data-color-link=&quot;#AFB5AA&quot;&gt; &amp;nbsp; &lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class=&quot;badge&quot; style=&quot;background-color:#2FA2D1&quot; data-color-primary=&quot;#2FA2D1&quot; data-color-secondary=&quot;#484D51&quot; data-color-link=&quot;#A5B1B7&quot;&gt; &amp;nbsp; &lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a class=&quot;badge&quot; style=&quot;background-color:#2f343b&quot; data-color-primary=&quot;#2f343b&quot; data-color-secondary=&quot;#525a65&quot; data-color-link=&quot;#FFFFFF&quot;&gt; &amp;nbsp; &lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;list-group-item&quot; href=&quot;#&quot;&gt;Change Primary Color
+      &lt;div class=&quot;input-group colorpicker-component bscp&quot; data-color=&quot;#54728c&quot; data-color-format=&quot;hex&quot; id=&quot;colr&quot;&gt;
+        &lt;span class=&quot;input-group-addon&quot;&gt;&lt;i style=&quot;background-color: #54728c&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+        &lt;input type=&quot;text&quot; value=&quot;#54728c&quot; id=&quot;primaryColor&quot; readonly class=&quot;form-control&quot; /&gt;
+
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;list-group-item&quot; href=&quot;#&quot;&gt;Change LeftSidebar Background
+      &lt;div class=&quot;input-group colorpicker-component bscp&quot; data-color=&quot;#f9f9f9&quot; data-color-format=&quot;hex&quot; id=&quot;Scolr&quot;&gt;
+        &lt;span class=&quot;input-group-addon&quot;&gt;&lt;i style=&quot;background-color: #f9f9f9&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+        &lt;input type=&quot;text&quot; value=&quot;#f9f9f9&quot; id=&quot;secondaryColor&quot; readonly class=&quot;form-control&quot; /&gt;
+
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;list-group-item&quot; href=&quot;#&quot;&gt;Change Leftsidebar Link Color
+      &lt;div class=&quot;input-group colorpicker-component bscp&quot; data-color=&quot;#54728c&quot; data-color-format=&quot;hex&quot; id=&quot;Lcolr&quot;&gt;
+        &lt;span class=&quot;input-group-addon&quot;&gt;&lt;i style=&quot;background-color: #54728c&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+        &lt;input type=&quot;text&quot; value=&quot;#54728c&quot; id=&quot;linkColor&quot; readonly class=&quot;form-control&quot; /&gt;
+
+      &lt;/div&gt;
+    &lt;/li&gt;
+    &lt;li class=&quot;list-group-item&quot; href=&quot;#&quot;&gt;Change RightSidebar Background
+      &lt;div class=&quot;input-group colorpicker-component bscp&quot; data-color=&quot;#f9f9f9&quot; data-color-format=&quot;hex&quot; id=&quot;Rcolr&quot;&gt;
+        &lt;span class=&quot;input-group-addon&quot;&gt;&lt;i style=&quot;background-color: #f9f9f9&quot;&gt;&lt;/i&gt;&lt;/span&gt;
+        &lt;input type=&quot;text&quot; value=&quot;#f9f9f9&quot; id=&quot;rightsidebarColor&quot; readonly class=&quot;form-control&quot; /&gt;
+
+      &lt;/div&gt;
+    &lt;/li&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+    &lt;!-- /.@Demo part only The part to here can be removed   --&gt;
+&lt;div id=&quot;bic_calendar_right&quot; class=&quot;bg-white&quot;&gt;&lt;/div&gt;
+
+&lt;h4 class=&quot;page-header text-primary&quot;&gt;Current Projects &lt;/h4&gt;
+
+&lt;div class=&quot;list-group projects&quot;&gt;
+  &lt;a class=&quot;list-group-item&quot; href=&quot;#&quot;&gt;  
+    &lt;p&gt; Archon &lt;span class=&quot;pull-right label bg-success&quot;&gt;90%&lt;/span&gt;&lt;/p&gt;
+    &lt;div class=&quot;progress progress-mini&quot;&gt;
+      &lt;div class=&quot;progress-bar progress-bar-success&quot; role=&quot;progressbar&quot; aria-valuenow=&quot;60&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; style=&quot;width: 90%;&quot;&gt;
+        &lt;span class=&quot;sr-only&quot;&gt;90% Complete&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/a&gt;
+  &lt;a class=&quot;list-group-item&quot; href=&quot;#&quot;&gt;  
+    &lt;p&gt; Banshee &lt;span class=&quot;pull-right label bg-warning&quot;&gt;40%&lt;/span&gt;&lt;/p&gt;
+    &lt;div class=&quot;progress progress-mini&quot;&gt;
+      &lt;div class=&quot;progress-bar progress-bar-warning&quot; role=&quot;progressbar&quot; aria-valuenow=&quot;60&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; style=&quot;width: 40%;&quot;&gt;
+        &lt;span class=&quot;sr-only&quot;&gt;40% Complete&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/a&gt;
+  &lt;a class=&quot;list-group-item&quot; href=&quot;#&quot;&gt;  
+    &lt;p&gt; Cascade &lt;span class=&quot;pull-right label bg-primary&quot;&gt;40%&lt;/span&gt;&lt;/p&gt;
+    &lt;div class=&quot;progress progress-mini&quot;&gt;
+      &lt;div class=&quot;progress-bar progress-bar-primary&quot; role=&quot;progressbar&quot; aria-valuenow=&quot;60&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; style=&quot;width: 75%;&quot;&gt;
+        &lt;span class=&quot;sr-only&quot;&gt;75% Complete&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/a&gt;
+&lt;/div&gt;
+&lt;h4 class=&quot;page-header&quot;&gt;Contacts&lt;/h4&gt;
+&lt;div class=&quot;list-group contact-list&quot;&gt;
+          &lt;a class=&quot;list-group-item&quot;&gt;
+            &lt;img src=&quot;images/profiles/one.png&quot; class=&quot;chat-user-avatar&quot; alt=&quot;&quot;&gt;
+            Jane Doe
+            &lt;i class=&quot;fa fa-circle&quot;&gt;&lt;/i&gt;
+          &lt;/a&gt;
+          &lt;a class=&quot;list-group-item contact&quot;&gt;
+            &lt;img src=&quot;images/profiles/two.png&quot; class=&quot;chat-user-avatar&quot; alt=&quot;&quot;&gt;
+            Jenny
+            &lt;i class=&quot;fa fa-circle online&quot;&gt;&lt;/i&gt;
+          &lt;/a&gt;
+          &lt;a class=&quot;list-group-item contact&quot;&gt;
+            &lt;img src=&quot;images/profiles/three.png&quot; class=&quot;chat-user-avatar&quot; alt=&quot;&quot;&gt;
+            Vijay
+            &lt;i class=&quot;fa fa-circle busy&quot;&gt;&lt;/i&gt;
+          &lt;/a&gt;
+          &lt;a class=&quot;list-group-item&quot;&gt;
+            &lt;img src=&quot;images/profiles/four.png&quot; class=&quot;chat-user-avatar&quot; alt=&quot;&quot;&gt;
+            Nikky
+            &lt;i class=&quot;fa fa-circle offline&quot;&gt;&lt;/i&gt;
+          &lt;/a&gt;
+          &lt;a class=&quot;list-group-item contact&quot;&gt;
+            &lt;img src=&quot;images/profiles/five.png&quot; class=&quot;chat-user-avatar&quot; alt=&quot;&quot;&gt;
+            John
+            &lt;i class=&quot;fa fa-circle&quot;&gt;&lt;/i&gt;
+          &lt;/a&gt;
+          &lt;a class=&quot;list-group-item contact&quot;&gt;
+            &lt;img src=&quot;images/profiles/six.png&quot; class=&quot;chat-user-avatar&quot; alt=&quot;&quot;&gt;
+            Anusha
+            &lt;i class=&quot;fa fa-circle&quot;&gt;&lt;/i&gt;
+          &lt;/a&gt;
+          &lt;a class=&quot;list-group-item&quot;&gt;
+            &lt;img src=&quot;images/profiles/seven.png&quot; class=&quot;chat-user-avatar&quot; alt=&quot;&quot;&gt;
+            Antony
+            &lt;i class=&quot;fa fa-circle offline&quot;&gt;&lt;/i&gt;
+          &lt;/a&gt;
+          &lt;a class=&quot;list-group-item contact&quot;&gt;
+            &lt;img src=&quot;images/profiles/eight.png&quot; class=&quot;chat-user-avatar&quot; alt=&quot;&quot;&gt;
+            Fana
+            &lt;i class=&quot;fa fa-circle busy&quot;&gt;&lt;/i&gt;
+          &lt;/a&gt;
+          &lt;a class=&quot;list-group-item contact&quot;&gt;
+            &lt;img src=&quot;images/profiles/nine.png&quot; class=&quot;chat-user-avatar&quot; alt=&quot;&quot;&gt;
+            Chris
+            &lt;i class=&quot;fa fa-circle offline&quot;&gt;&lt;/i&gt;
+          &lt;/a&gt;
+          &lt;a class=&quot;list-group-item&quot;&gt;
+            &lt;img src=&quot;images/profiles/ten.png&quot; class=&quot;chat-user-avatar&quot; alt=&quot;&quot;&gt;
+            Sandy
+            &lt;i class=&quot;fa fa-circle online&quot;&gt;&lt;/i&gt;
+          &lt;/a&gt;
+          &lt;a class=&quot;list-group-item contact&quot;&gt;
+            &lt;img src=&quot;images/profiles/eleven.png&quot; class=&quot;chat-user-avatar&quot; alt=&quot;&quot;&gt;
+            Ajay
+            &lt;i class=&quot;fa fa-circle&quot;&gt;&lt;/i&gt;
+          &lt;/a&gt;
+          &lt;a class=&quot;list-group-item contact&quot;&gt;
+            &lt;img src=&quot;images/profiles/twelve.png&quot; class=&quot;chat-user-avatar&quot; alt=&quot;&quot;&gt;
+            Sanju
+            &lt;i class=&quot;fa fa-circle&quot;&gt;&lt;/i&gt;
+          &lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+
+&lt;/div&gt;  &lt;!-- /.right-sidebar-holder --&gt;
+&lt;/div&gt;  &lt;!-- /.right-sidebar --&gt;
+
+</pre>
+
+  
+  <h3 class="text-primary">End of box and site holder</h3>
+          <pre class="prettyprint linenums">&lt;/div&gt; &lt;!-- /.box-holder --&gt;
+&lt;/div&gt;&lt;!-- /.site-holder --&gt;
+
+</pre>
+
+  
+  <h3 class="text-primary">Load Js after the site holder ending</h3>
+          <pre class="prettyprint linenums">&lt;!-- Load JS here for Faster site load =============================--&gt;
+&lt;script src=&quot;js/jquery-1.10.2.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery-ui-1.10.3.custom.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/less-1.5.0.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery.ui.touch-punch.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/bootstrap.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/bootstrap-select.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/bootstrap-switch.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery.tagsinput.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery.placeholder.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/bootstrap-typeahead.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/application.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/moment.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery.dataTables.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery.sortable.js&quot;&gt;&lt;/script&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/jquery.gritter.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery.nicescroll.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/skylo.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/prettify.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery.noty.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/bic_calendar.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/theme-options.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;js/bootstrap-progressbar.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/bootstrap-progressbar-custom.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/bootstrap-colorpicker.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/bootstrap-colorpicker-custom.js&quot;&gt;&lt;/script&gt;
+
+
+
+&lt;script src=&quot;js/raphael-min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/morris-0.4.3.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/morris-custom.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;js/charts/jquery.sparkline.min.js&quot;&gt;&lt;/script&gt; 
+
+&lt;!-- NVD3 graphs  =============================--&gt;
+&lt;script src=&quot;js/nvd3/lib/d3.v3.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/nvd3/nv.d3.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/nvd3/src/models/legend.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/nvd3/src/models/pie.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/nvd3/src/models/pieChart.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/nvd3/src/utils.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/nvd3/sample.nvd3.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;!-- Core Jquery File  =============================--&gt;
+&lt;script src=&quot;js/core.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/dashboard-custom.js&quot;&gt;&lt;/script&gt;
+
+</pre>
+
+  <h3 class="text-primary">End of Document</h3>
+          <pre class="prettyprint linenums">&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+  
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+
+
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="page-header" id="first-page">Your First Page</h2>
+          </div>
+          
+          <div class="panel"> 
+            <div class="panel-body">
+                I think you got some idea of how it is structured. To get started quickly please open up <code>template.html (or template.html)</code> 
+                 It has basic css and jquery files to get started.Lets go more detail on template page with sections. 
+                 <div class="row">
+                 <div class="col-md-3">
+                  <h3>Sections are explained</h3>
+                  <p> What ever you start on the new page, make sure to include in a <code>.row</code> class </p>
+                </div>
+
+                <div class="col-md-9">
+                  <h3>  </h3>
+                  <pre class="prettyprint linenums">&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-mod-12&quot;&gt;
+
+    &lt;ul class=&quot;breadcrumb&quot;&gt;
+      &lt;li&gt;&lt;a href=&quot;index.html&quot;&gt;Dashboard&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;template.html&quot;&gt;Basic Template&lt;/a&gt;&lt;/li&gt;
+      &lt;li class=&quot;active&quot;&gt;BreadCrumb&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;div class=&quot;form-group pull-right&quot;&gt;
+      &lt;input type=&quot;text&quot; class=&quot;form-control form-cascade-control nav-input-search&quot; size=&quot;20&quot; placeholder=&quot;Search through site&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;h3 class=&quot;page-header&quot;&gt; Basic Template &lt;i class=&quot;fa fa-info-circle animated bounceInDown show-info&quot;&gt;&lt;/i&gt; &lt;/h3&gt;
+
+    &lt;blockquote class=&quot;page-information hidden&quot;&gt;
+      &lt;p&gt;
+        &lt;b&gt;Template Page&lt;/b&gt; is the basic page where you can add more pages according to your requirements easily within this division.
+      &lt;/p&gt;
+    &lt;/blockquote&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+              <p>
+                So as I explained, lets get anything in between <code>.row</code> class like above. Nextly we need to give <code>.breadcumb</code> with <code>ul</code>
+                and yeah here comes little of my tricks, let me explain each class</p>
+                <ul>
+                  <li><code>.form-cascade-control</code> you can add this class to a normal <code>.form-control</code> to give border effect like you see in demo</li>
+                  <li><code>.nav-input-search</code> This class is referred in <code>core.js</code> file to use for search function with the plugin <code>typehead</code></li>
+                  <li><code>.page-information</code> This class is used for blockqoute to get the border effect. </li>
+                </ul>
+                <label class="label bg-info">Rest of the classes are of bootstrap classes</label>
+                 </div>
+                 </div>
+                 </div>
+            </div>
+          </div>
+
+          <div class="row">
+          <div class="col-md-12">
+            <h2 class="page-header" id="dynamic-menu">PHP Dymanic Menu</h2>
+          </div>
+            
+          <div class="panel"> 
+            <div class="panel-body">
+  
+    <div class="row">
+      <div class="col-md-3">
+         <p>I have a written a small code with a big logic to help you with the left side menu. To make it easy for you , there is a file called menu-builder.html in the root folder</p>
+            All you need to do is open that file and check the array defined <code>$menuList</code> in php. Right box is the array defined by me. it is just for demo, you can easily edit it 
+            basing on the your menu list or extract the code from database and then pass the array to the function <code>buildMenu($menuList)</code> defined in <code>.menu-builder.html</code>
+            The following array supports the multdimensional array.
+            <br />
+    
+            <hr>
+            The first array for example ,<br /> <code>title</code> is the menu list title shown<br/>
+             <code>link</code> is the link to be directed to <br/>
+              <code>icon</code> is the icon for the list item<br/>
+                  <pre class="prettyprint linenums">$menuList = Array(
+    0 =&gt; Array(
+        'title' =&gt; 'Dashboard',
+        'link' =&gt; 'index.html',
+        'icon' =&gt; 'dashboard',
+        'children' =&gt; Array()
+    ),
+    </pre>
+       <hr>
+       <p>So to build the menu simple thing is pass array to the function where you need the menu to be printed. Please refer the <code>partials/header.html</code> file. </p>
+      </div>
+      <div class="col-md-9">
+          <pre class="prettyprint linenums">$menuList = Array(
+    0 =&gt; Array(
+        'title' =&gt; 'Dashboard',
+        'link' =&gt; 'index.html',
+        'icon' =&gt; 'dashboard',
+        'children' =&gt; Array()
+    ),
+    1 =&gt; Array(
+        'title' =&gt; 'Top Navbar',
+        'link' =&gt; 'top-navbar.html',
+        'icon' =&gt; 'indent',
+        'children' =&gt; Array()
+            
+    ),
+    2 =&gt; Array(
+        'title' =&gt; 'Pages',
+        'link' =&gt; '#',
+        'icon' =&gt; 'book',
+        'children' =&gt; Array(
+            0 =&gt; Array(
+                'title' =&gt; 'Calendar',
+                'link' =&gt; 'calendar.html',
+                'icon' =&gt; 'calendar',
+                'children' =&gt; Array(),
+            ),
+            1 =&gt; Array(
+                'title' =&gt; 'Chat',
+                'link' =&gt; 'chat.html',
+                'icon' =&gt; 'comment',
+                'children' =&gt; Array()
+            ),
+            2 =&gt; Array(
+                'title' =&gt; 'Profile',
+                'link' =&gt; 'profile.html',
+                'icon' =&gt; 'user',
+                'children' =&gt; Array()
+            ),
+            3 =&gt; Array(
+                'title' =&gt; 'Gallery',
+                'link' =&gt; 'gallery.html',
+                'icon' =&gt; 'th',
+                'children' =&gt; Array()
+            ),
+            4 =&gt; Array(
+                'title' =&gt; 'Grid',
+                'link' =&gt; 'grids.html',
+                'icon' =&gt; 'th-large',
+                'children' =&gt; Array()
+            ),
+            5 =&gt; Array(
+                'title' =&gt; 'Images',
+                'link' =&gt; 'images.html',
+                'icon' =&gt; 'picture-o',
+                'children' =&gt; Array()
+            ),
+            6 =&gt; Array(
+                'title' =&gt; 'Inbox',
+                'link' =&gt; 'inbox.html',
+                'icon' =&gt; 'envelope',
+                'children' =&gt; Array()
+            ),
+            7 =&gt; Array(
+                'title' =&gt; 'Invoice',
+                'link' =&gt; 'invoice.html',
+                'icon' =&gt; 'credit-card',
+                'children' =&gt; Array()
+            ),
+            8 =&gt; Array(
+                'title' =&gt; 'Pricing',
+                'link' =&gt; 'pricing-table.html',
+                'icon' =&gt; 'money',
+                'children' =&gt; Array()
+            ),
+            9 =&gt; Array(
+                'title' =&gt; 'Support',
+                'link' =&gt; 'support.html',
+                'icon' =&gt; 'gears',
+                'children' =&gt; Array()
+            ),
+            10 =&gt; Array(
+                'title' =&gt; 'Typography',
+                'link' =&gt; 'typography.html',
+                'icon' =&gt; 'text-width',
+                'children' =&gt; Array()
+            )
+        )
+    ),
+    3 =&gt; Array(
+        'title' =&gt; 'Utility',
+        'link' =&gt; '#',
+        'icon' =&gt; 'tint',
+        'children' =&gt; Array(
+            0 =&gt; Array(
+                'title' =&gt; '404',
+                'link' =&gt; '404.html',
+                'icon' =&gt; 'exclamation-circle',
+                'children' =&gt; Array(),
+            ),
+            1 =&gt; Array(
+                'title' =&gt; '505',
+                'link' =&gt; '505.html',
+                'icon' =&gt; 'exclamation-circle',
+                'children' =&gt; Array()
+           ),
+            2 =&gt; Array(
+                'title' =&gt; 'FAQ',
+                'link' =&gt; 'faq.html',
+                'icon' =&gt; 'question',
+                'children' =&gt; Array()
+           ),
+            3 =&gt; Array(
+                'title' =&gt; 'Lock Screen',
+                'link' =&gt; 'screens.html',
+                'icon' =&gt; 'lock',
+                'children' =&gt; Array()
+           ),
+            4 =&gt; Array(
+                'title' =&gt; 'Signin',
+                'link' =&gt; 'screens.html',
+                'icon' =&gt; 'sign-in',
+                'children' =&gt; Array()
+           ),
+            5 =&gt; Array(
+                'title' =&gt; 'Sign Up',
+                'link' =&gt; 'screens.html',
+                'icon' =&gt; 'smile-o',
+                'children' =&gt; Array()
+           ),
+            6 =&gt; Array(
+                'title' =&gt; 'Template',
+                'link' =&gt; 'template.html',
+                'icon' =&gt; 'pagelines',
+                'children' =&gt; Array()
+           ),
+        )
+    ),
+    4 =&gt; Array(
+        'title' =&gt; 'UI Elements',
+        'link' =&gt; '#',
+        'icon' =&gt; 'user',
+        'children' =&gt; Array(
+            0 =&gt; Array(
+                'title' =&gt; 'Alerts',
+                'link' =&gt; 'alerts.html',
+                'icon' =&gt; 'exclamation-triangle',
+                'children' =&gt; Array(),
+            ),
+            1 =&gt; Array(
+                'title' =&gt; 'Animations',
+                'link' =&gt; 'animations.html',
+                'icon' =&gt; 'font',
+                'children' =&gt; Array()
+           ),
+            2 =&gt; Array(
+                'title' =&gt; 'BreadCrubms',
+                'link' =&gt; 'breadcrumbs-jumbotron.html',
+                'icon' =&gt; 'chain',
+                'children' =&gt; Array()
+           ),
+            3 =&gt; Array(
+                'title' =&gt; 'Buttons',
+                'link' =&gt; 'buttons.html',
+                'icon' =&gt; 'lock',
+                'children' =&gt; Array()
+           ),
+            4 =&gt; Array(
+                'title' =&gt; 'Carousel',
+                'link' =&gt; 'carousel.html',
+                'icon' =&gt; 'coffee',
+                'children' =&gt; Array()
+           ),
+            5 =&gt; Array(
+                'title' =&gt; 'Notifications',
+                'link' =&gt; 'notifications.html',
+                'icon' =&gt; 'bell-o',
+                'children' =&gt; Array()
+           ),
+            6 =&gt; Array(
+                'title' =&gt; 'Labels Badges',
+                'link' =&gt; 'labels-badges.html',
+                'icon' =&gt; 'phone-square',
+                'children' =&gt; Array()
+           ),
+            7 =&gt; Array(
+                'title' =&gt; 'List Groups',
+                'link' =&gt; 'list-groups.html',
+                'icon' =&gt; 'dot-circle-o',
+                'children' =&gt; Array()
+           ),
+            8 =&gt; Array(
+                'title' =&gt; 'Pagination',
+                'link' =&gt; 'pagination.html',
+                'icon' =&gt; 'sort-numeric-asc',
+                'children' =&gt; Array()
+           ),
+            9 =&gt; Array(
+                'title' =&gt; 'Panels',
+                'link' =&gt; 'panels.html',
+                'icon' =&gt; 'windows',
+                'children' =&gt; Array()
+           ),
+            10 =&gt; Array(
+                'title' =&gt; 'Progress Bars',
+                'link' =&gt; 'progress-bars.html',
+                'icon' =&gt; 'ruble',
+                'children' =&gt; Array()
+           ),
+            11 =&gt; Array(
+                'title' =&gt; 'Sliders',
+                'link' =&gt; 'sliders.html',
+                'icon' =&gt; 'exchange',
+                'children' =&gt; Array()
+           ),
+            12 =&gt; Array(
+                'title' =&gt; 'Tabs Accordians',
+                'link' =&gt; 'tabs-accordians.html',
+                'icon' =&gt; 'check',
+                'children' =&gt; Array()
+           ),
+            13 =&gt; Array(
+                'title' =&gt; 'Info Boxes',
+                'link' =&gt; 'info-boxes.html',
+                'icon' =&gt; 'bullseye',
+                'children' =&gt; Array()
+           ),
+            14 =&gt; Array(
+                'title' =&gt; 'Tooltips Popovers',
+                'link' =&gt; 'tooltips-popovers.html',
+                'icon' =&gt; 'asterisk',
+                'children' =&gt; Array()
+           ),
+            15 =&gt; Array(
+                'title' =&gt; 'Wells',
+                'link' =&gt; 'wells.html',
+                'icon' =&gt; 'beer',
+                'children' =&gt; Array()
+           ),
+        )
+    ),
+   5 =&gt; Array(
+        'title' =&gt; 'Tables',
+        'link' =&gt; '#',
+        'icon' =&gt; 'table',
+        'children' =&gt; Array(
+            0 =&gt; Array(
+                'title' =&gt; 'Basic Tables',
+                'link' =&gt; 'basic-tables.html',
+                'icon' =&gt; 'table',
+                'children' =&gt; Array(),
+            ),
+            1 =&gt; Array(
+                'title' =&gt; 'Editable Tables',
+                'link' =&gt; 'editable-tables.html',
+                'icon' =&gt; 'table',
+                'children' =&gt; Array(),
+            ),
+            2 =&gt; Array(
+                'title' =&gt; 'Dynamic Tables',
+                'link' =&gt; 'dynamic-tables.html',
+                'icon' =&gt; 'table',
+                'children' =&gt; Array(),
+            ),
+        )
+    ),
+   6 =&gt; Array(
+        'title' =&gt; 'Unlimited Menu',
+        'link' =&gt; '#',
+        'icon' =&gt; 'sitemap',
+        'children' =&gt; Array(
+            0 =&gt; Array(
+                'title' =&gt; 'Submenu',
+                'link' =&gt; '#',
+                'icon' =&gt; 'android',
+                'children' =&gt; Array(),
+            ),
+            2 =&gt; Array(
+                'title' =&gt; 'Submenu',
+                'link' =&gt; '#',
+                'icon' =&gt; 'apple',
+                'children' =&gt; Array(),
+            ),
+            3 =&gt; Array(
+                'title' =&gt; 'windows',
+                'link' =&gt; '#',
+                'icon' =&gt; 'android',
+                'children' =&gt; Array(
+                    0 =&gt; Array(
+                        'title' =&gt; 'Submenu',
+                        'link' =&gt; '#',
+                        'icon' =&gt; 'android',
+                        'children' =&gt; Array(),
+                    ),
+                    2 =&gt; Array(
+                        'title' =&gt; 'Submenu',
+                        'link' =&gt; '#',
+                        'icon' =&gt; 'apple',
+                        'children' =&gt; Array(),
+                    ),
+                    3 =&gt; Array(
+                        'title' =&gt; 'windows',
+                        'link' =&gt; '#',
+                        'icon' =&gt; 'android',
+                        'children' =&gt; Array(
+                            0 =&gt; Array(
+                                'title' =&gt; 'Submenu',
+                                'link' =&gt; '#',
+                                'icon' =&gt; 'android',
+                                'children' =&gt; Array(),
+                            ),
+                            2 =&gt; Array(
+                                'title' =&gt; 'Submenu',
+                                'link' =&gt; '#',
+                                'icon' =&gt; 'apple',
+                                'children' =&gt; Array(),
+                            ),
+                            3 =&gt; Array(
+                              'title' =&gt; 'windows',
+                              'link' =&gt; '#',
+                              'icon' =&gt; 'android',
+                              'children' =&gt; Array(),
+                            )
+                        ),
+                    )
+                ),
+            ),
+        )
+    ),
+   7 =&gt; Array(
+        'title' =&gt; 'Forms',
+        'link' =&gt; '#',
+        'icon' =&gt; 'list-alt',
+        'children' =&gt; Array(
+            0 =&gt; Array(
+                'title' =&gt; 'Dropzone File Upload',
+                'link' =&gt; 'dropzone-file-upload.html',
+                'icon' =&gt; 'level-down',
+                'children' =&gt; Array(),
+            ),
+            1 =&gt; Array(
+                'title' =&gt; 'Form Input Masks',
+                'link' =&gt; 'form-input-masks.html',
+                'icon' =&gt; 'pencil-square',
+                'children' =&gt; Array(),
+            ),
+            2 =&gt; Array(
+                'title' =&gt; 'Form Validation',
+                'link' =&gt; 'form-validation.html',
+                'icon' =&gt; 'warning',
+                'children' =&gt; Array(),
+            ),
+            3 =&gt; Array(
+                'title' =&gt; 'Form Wizard',
+                'link' =&gt; 'form-wizard.html',
+                'icon' =&gt; 'indent',
+                'children' =&gt; Array(),
+            ),
+            4 =&gt; Array(
+                'title' =&gt; 'Input Groups',
+                'link' =&gt; 'input-groups.html',
+                'icon' =&gt; 'group',
+                'children' =&gt; Array(),
+            ),
+            5 =&gt; Array(
+                'title' =&gt; 'Layouts &amp;nbsp; Elements',
+                'link' =&gt; 'layouts-elements.html',
+                'icon' =&gt; 'indent',
+                'children' =&gt; Array(),
+            ),
+            6 =&gt; Array(
+                'title' =&gt; 'Multiple File Upload',
+                'link' =&gt; 'multiple-file-upload.html',
+                'icon' =&gt; 'cloud-upload',
+                'children' =&gt; Array(),
+            ),
+            7 =&gt; Array(
+                'title' =&gt; 'Pickers',
+                'link' =&gt; 'pickers.html',
+                'icon' =&gt; 'eye',
+                'children' =&gt; Array(),
+            ),
+            8 =&gt; Array(
+                'title' =&gt; 'Wysiwyg &amp;nbp; Markdown',
+                'link' =&gt; 'wysiwyg-markdown.html',
+                'icon' =&gt; 'pencil-square',
+                'children' =&gt; Array(),
+            ),
+        )
+    ),
+   8 =&gt; Array(
+        'title' =&gt; 'Charts',
+        'link' =&gt; '#',
+        'icon' =&gt; 'bar-chart-o',
+        'children' =&gt; Array(
+            0 =&gt; Array(
+                'title' =&gt; 'Basic Charts',
+                'link' =&gt; 'basic-charts.html',
+                'icon' =&gt; 'bar-chart-o',
+                'children' =&gt; Array(),
+            ),
+            1 =&gt; Array(
+                'title' =&gt; 'Live Charts',
+                'link' =&gt; 'live-charts.html',
+                'icon' =&gt; 'bar-chart-o',
+                'children' =&gt; Array(),
+            ),
+            2 =&gt; Array(
+                'title' =&gt; 'Morris Charts',
+                'link' =&gt; 'morris.html',
+                'icon' =&gt; 'bar-chart-o',
+                'children' =&gt; Array(),
+            ),
+            3 =&gt; Array(
+                'title' =&gt; 'Pie Charts',
+                'link' =&gt; 'pie-charts.html',
+                'icon' =&gt; 'bar-chart-o',
+                'children' =&gt; Array(),
+            ),
+            4 =&gt; Array(
+                'title' =&gt; 'Spark Lines',
+                'link' =&gt; 'sparklines.html',
+                'icon' =&gt; 'bar-chart-o',
+                'children' =&gt; Array(),
+            ),
+            5 =&gt; Array(
+                'title' =&gt; 'NVD3 Charts',
+                'link' =&gt; 'nvd3.html',
+                'icon' =&gt; 'bar-chart-o',
+                'children' =&gt; Array(),
+            )
+        )
+    ),
+   9 =&gt; Array(
+        'title' =&gt; 'Maps',
+        'link' =&gt; '#',
+        'icon' =&gt; 'map-marker',
+        'children' =&gt; Array(
+            0 =&gt; Array(
+                'title' =&gt; 'Google Maps',
+                'link' =&gt; 'google-maps.html',
+                'icon' =&gt; 'google-plus',
+                'children' =&gt; Array(),
+            ),
+            1 =&gt; Array(
+                'title' =&gt; 'Vector Maps',
+                'link' =&gt; 'vector-maps.html',
+                'icon' =&gt; 'vimeo-square',
+                'children' =&gt; Array(),
+            )
+        )
+    ),
+   10 =&gt; Array(
+        'title' =&gt; 'Icons',
+        'link' =&gt; '#',
+        'icon' =&gt; 'truck',
+        'children' =&gt; Array()
+    )
+);
+</pre>
+      </div>
+    </div>
+           
+
+            </div>
+          </div>
+          </div>
+        </div>
+
+
+
+          <div class="row">
+          <div class="col-md-12">
+            <h2 class="page-header" id="layout-options">Layout Options <span class="small">boxed version, top fixed navbar, bottom fixed navbar</span> </h2>
+          </div>
+          
+          <div class="panel"> 
+            <div class="panel-body">
+              <div class="row">
+                <div class="col-md-3">
+                  <h4 class="text-primary">Top Fixed Navbar</h4>
+                </div>
+                <div class="col-md-9">
+                  Top navbar can be fixed with two simple classes by adding  <code>navbar-fixed-top</code> to the <code>navbar</code> and <code>navbar-fixed</code>
+                  to the <code>content</code> This will make the top navbar fixed and content adjust according to the top navbar. Simple right ? ;)
+                  <br/>
+                  so for the navbar code looks from <br /><br />
+                  <code>&lt;nav class=&quot;navbar&quot; role=&quot;navigation&quot;&gt;</code> to <code>&lt;nav class=&quot;navbar navbar-fixed-top&quot; role=&quot;navigation&quot;&gt;</code> <br /><br />
+                  <code>&lt;divdiv class=&quot;content&quot;&gt;</code> to <code>&lt;div class=&quot;content navbar-fixed&quot;&gt;</code>
+<br /><br />
+
+                </div>
+              </div>
+              <hr />
+              <div class="row">
+                <div class="col-md-3">
+                  <h4 class="text-primary">Bottom Fixed Navbar</h4>
+                </div>
+                <div class="col-md-9">
+                  Top navbar can be fixed to the bottom but with four classes here. no worries simple again  <code>navbar-fixed-bottom</code> to the <code>navbar</code> , <code>navbar-fixedBottom</code>
+                  to the <code>content</code> , <code>btn-group</code> to the <code>navbar-collapse</code> in the navbar menu and finally <code>dropup</code> to the <code>navbar-collapse</code> again. This will make the top navbar fixed to the bottom and  adjust content according to the bottom fixed navbar. Simple right ? well I hope so 
+
+                </div>
+              </div>
+  <hr />
+              <div class="row">
+                <div class="col-md-3">
+                  <h4 class="text-primary">Boxed Version</h4>
+                </div>
+                <div class="col-md-9">
+                  Well I promise this one is really simple, just add the class <code>container</code> to the <code>site-holder</code> and sorry there is nothing left except adding a background to the body if you did not do that already. You are good to check it live now.
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+          </div>
+        </div>
+
+
+
+  <h1 class="page-header text-center"> Advanced</h1>
+        
+  <div class="row">
+          <div class="col-md-12">
+            <h2 class="page-header" id="panels">Panels  </h2>
+          </div>
+          
+          <div class="panel"> 
+            <div class="panel-body">
+              you can refer panels from www.getbootstrap.com , apart from that i have defined some possiblities to use them more . 
+              First of all let me explain about <code>.panel-cascade</code> class. This class is added to <code>.panel</code> class and the style applies
+              now for more classes for panels are as below
+              <table class="table table-bordered table-striped">
+                <tr>
+                  <th>Class</th>
+                  <th>How it helps</th>
+                </tr>
+                <tr>
+                  <td><code>.panel-cascade</code></td>
+                  <td> this class has its own styles defined by me, try it for sure </td>
+                </tr>
+                <tr>
+                  <td><code>.nopadding</code></td>
+                  <td> This removes the padding from <code>.panel-body</code> if applied to <code>.panel-body</code> </td>
+                </tr>
+                <tr>
+                  <td><code>.panel-minimise and .panel-close</code></td>
+                  <td> These are defined with the font awesome icon and they help the panels to close or minimise. Make sure you follow the demo panel code shown next to this table so that they will work. The js code for this operation is already defined in corre.js</td>
+                </tr>
+                <tr>
+                  <td><code>.panel-info</code></td>
+                  <td>This applies the panel-heading color to be blue</td>
+                </tr>
+                <tr>
+                  <td><code>.panel-warning</code></td>
+                  <td>This applies the panel-heading color to be orange</td>
+                </tr>
+                <tr>
+                  <td><code>.panel-success</code></td>
+                  <td>This applies the panel-heading color to be green</td>
+                </tr>
+                <tr>
+                  <td><code>.panel-danger</code></td>
+                  <td>This applies the panel-heading color to be red</td>
+                </tr>
+                <tr>
+                  <td><code>.text-primary, bg-primary</code></td>
+                  <td>Primary uses the primary color defined in the css/style.less file . <code>.bg-primary</code> gives background, <code>.text-primary</code> gives primary text color</td>
+                </tr>
+                <tr>
+                  <td><code>.bg-info, .bg-danger, .bg-warning, .bg-success</code></td>
+                  <td>yeah you can use these classes to any tag to get background colors</td>
+                </tr>
+                <tr>
+                  <td><code>.text-info, .text-danger, .text-warning, .text-success</code></td>
+                  <td>yeah you can use these classes to any tag to get text colors</td>
+                </tr>
+              </table>
+              <div class="row">
+                <pre class="prettyprint linenums">&lt;!-- Demo Panel --&gt;
+&lt;div class=&quot;row&quot;&gt;
+  &lt;div class=&quot;col-md-12&quot;&gt;
+    &lt;div class=&quot;panel panel-cascade&quot;&gt;
+      &lt;div class=&quot;panel-heading&quot;&gt;
+        &lt;h3 class=&quot;panel-title text-primary&quot;&gt;
+          Heading goes here
+          &lt;span class=&quot;pull-right&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;panel-minimize&quot;&gt;&lt;i class=&quot;fa fa-chevron-up&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;a href=&quot;#&quot; class=&quot;panel-close&quot;&gt;&lt;i class=&quot;fa fa-times&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+          &lt;/span&gt;
+        &lt;/h3&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;panel-body panel-border&quot;&gt;
+        This is a basic structure for demo panel
+      &lt;/div&gt; &lt;!-- /panel body --&gt; 
+    &lt;/div&gt;  
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+              </div>
+            </div>
+          </div>
+        </div>
+          
+        </div> <!-- /.content -->
+
+      </div> <!-- /.box-holder -->
+    </div><!-- /.site-holder -->
+
+    <!-- Load JS here for Faster site load =============================-->
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+    <script src="js/less-1.5.0.min.js"></script>
+    <script src="js/jquery.ui.touch-punch.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap-select.js"></script>
+    <script src="js/bootstrap-switch.js"></script>
+    <script src="js/jquery.tagsinput.js"></script>
+    <script src="js/jquery.placeholder.js"></script>
+    <script src="js/bootstrap-typeahead.js"></script>
+    <script src="js/application.js"></script>
+    <script src="js/moment.min.js"></script>
+    <script src="js/jquery.dataTables.min.js"></script>
+    <script src="js/jquery.sortable.js"></script>
+    <script src="js/jquery.gritter.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/prettify.min.js"></script>
+    <script src="assets/js/scripts.js"></script>
+
+
+  </body>
+  </html>
