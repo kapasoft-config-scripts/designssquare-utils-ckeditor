@@ -268,7 +268,10 @@
             </tr>
             <tr>
                 <td>HOOK_ckeditor_clean_elements_alter(&$desposable_elements, $vars){</td>
-                <td>$desposable_elements[N][]:STRING(reference for the element used for jQuery selector i.e ".calendar","div#calendar",etc)<br>
+                <td>$desposable_elements[N][id]:STRING(reference for the element used for jQuery selector i.e ".calendar","div#calendar",etc)<br>
+                    $desposable_elements[N][remove]:STRING(with potential values - 'content','element','attr' that determines if element, or its content or attributes are removed )<br>
+                    $desposable_elements[N][attr]:ARRAY(this only applies if 'remove' specifies 'attr' and it tells which attributes to perform action on such as remove)<br>
+                    $desposable_elements[N][attr][N]:STRING(the name of attribute)<br>
                     $vars:ARRAY(the $vars variable from HOOK_preprocess_page)<br>
                 </td>
                 <td>DOM Elements</td>
@@ -310,6 +313,24 @@
             so the mechanism knows what needs to be removed before saving content</p>
 
         <p>if you need the name of block, that it is set at the $vars['block-name']</p>
+    </section>
+    <section id="elements">
+        <h3>Disposable Elements</h3>
+        <hr>
+        <p>Often times when JS widgets are loaded, it populates the DOM with new elements, attributes,etc all of which need to be removed
+        before saving, so it can correctly load the next time editor is opened. To clean out these disposable elements, use hook_clean_elements_alter().
+        Here is an example as following</p>
+        <code>
+         function HOOK_ckeditor_clean_elements_alter(&$desposable_elements, $vars){(){<br>
+            $desposable_elements[] = array('id' => '#calendar', 'remove' => 'content');<br>
+            $desposable_elements[] = array('id' => '.vmaps', 'remove' => 'content');<br>
+            $desposable_elements[] = array('id' => '[class^=slimScroll]', 'remove' => 'element');<br>
+            $desposable_elements[] = array('id' => '.scroller', 'remove' => 'attr', 'attr' =>array('data-initialized'));<br>
+        }<br>
+        </code>
+        <p>In the following example, we remove all the content for the element with id "calendar" so does for elements with class
+        name "vmaps". Then we remove element with id class '^=slimScroll' while keeping the content. At last, we remove an attribute - data-initialized
+         from elements with class 'scroller' </p>
     </section>
     <section id="troubleshoot">
         <h3>Troubleshoot</h3>
