@@ -41,7 +41,7 @@ if (!window.CKEDITOR_DS) {
                 var script = ck_dom().createElement('script');
                 script.type = 'text/javascript';
                 script.onload = function () {
-                    if(log_on)console.log('script ' + js_scripts[index]['path'] + ' loaded');
+                    if (log_on)console.log('script ' + js_scripts[index]['path'] + ' loaded');
                     //after importing jquery at index 0, we append wrappers to the body DOM depending on region
                     if (index == 0) {
                         if (ck_editor().getData() && !ck_dom().body.getElementsByClassName('ckeditor-wrapper-end').length) {
@@ -60,12 +60,12 @@ if (!window.CKEDITOR_DS) {
             }
         }
 
-        var _clean = function(textId){
+        var _clean = function (textId) {
             var decodedOldHtml = ck_editor().getData();
             var jData = jQuery(decodedOldHtml);
 
             var newData = _removeWraps(jData);//removes wrapped layout before and after the content
-            _removeDisposables(newData);//removes all the removable elements content
+            _removeElements(newData);//removes all the removable elements content
 
             //set textarea
             $('#' + textId).html(newData.html());
@@ -74,26 +74,44 @@ if (!window.CKEDITOR_DS) {
             editor.setData(newData.html(), {
                 callback: function () {
                     this.updateElement();
-                    if(log_on)console.log('removed wraps....:');
+                    if (log_on)console.log('removed wraps....:');
                 }
             });
 
         }
 
-        var _removeDisposables = function(jData){
-            $.each(desposable_elements, function (index, id) {
+        var _removeElements = function (jData) {
+            $.each(desposable_elements, function (index, obj) {
 //                var target = jData.find(id);
 //                if(target.length == 1){
 //                    target.empty();
 //                }else if(target.length >= 1){
 //
 //                }
-                jData.find(id).each(function(){
-                    $(this).empty();
+                jData.find(obj['id']).each(function () {
+                    if (obj['remove'] == 'element') {
+                        var cnt = $(this).contents();
+                        $(this).replaceWith(cnt);
+                        if (log_on)console.log('the element with reference: ' + obj['id'] + ' was removed');
+                    } else if (obj['remove'] == 'content') {
+                        $(this).empty();
+                        if (log_on)console.log('the content for element with reference: ' + obj['id'] + ' was removed');
+                    } else if (obj['remove'] == 'attr') {
+                        var element = $(this);
+                        $.each(obj['attr'], function () {
+                            element.removeAttr(this);
+                            if (log_on)console.log('the attribute ' + this + ' for element with reference: ' + obj['id'] + ' was removed');
+                        });
+                    }
+//                    }else if(obj['remove'] == 'attr-replace'){
+//                    $.each(obj['attr'],function(attribute,value){
+//                        $(this).attr(attribute.value);
+//                        if(log_on)console.log('the attribute ' + this + ' for element with reference: ' + obj['id'] + ' was removed');
+//                    });
                 });
-                if(log_on)console.log('the content for element with reference: ' + id + ' was removed');
             });
         }
+
 
         var _removeWraps = function (jData) {
 
@@ -105,11 +123,11 @@ if (!window.CKEDITOR_DS) {
          * takes each CSS style and appends to header for the editor
          * @returns {*}
          */
-        var _importCss = function(){
+        var _importCss = function () {
             editor = ck_editor();
             $.each(css_styles, function (index, css) {
                 editor.document.appendStyleSheet('/' + css);
-                if(log_on)console.log('css file ' + css + ' imported');
+                if (log_on)console.log('css file ' + css + ' imported');
             });
         }
 
@@ -118,11 +136,11 @@ if (!window.CKEDITOR_DS) {
          * @param $inline
          *      list of objects each containing the inline js
          */
-        var _import_inline_js = function(){
+        var _import_inline_js = function () {
             $.each(js_inline, function (index, obj) {
                 var inline = ck_dom().createElement('script');
                 inline.type = 'text/javascript';
-                if(log_on)console.log('write inline js: ' + obj);
+                if (log_on)console.log('write inline js: ' + obj);
                 var textNode = ck_dom().createTextNode(obj);
                 inline.appendChild(textNode);
                 ck_dom().head.appendChild(inline);
@@ -134,27 +152,27 @@ if (!window.CKEDITOR_DS) {
          * @param wrap
          *      an object with 'prefix' and 'postfix' attributes containing tags to add before and after the content of editor
          */
-        var _reconstruct_dom = function (wrap){
+        var _reconstruct_dom = function (wrap) {
             //@ToDo refactor to use setData CKEDITOR Api instead of appending children
 //                ck_dom = this.ck_dom();
             //add wraps
             var inline = ck_dom().createElement('script');
             inline.type = 'text/javascript';
             var domWraps = 'if($(\'body\').length > 0){ $(\'body\').html(\'' + wrap['prefix'] + '\' + $(\"body\").html() + \'' + wrap['postfix'] + '\');}';
-            if(log_on)console.log('adding content wrapper - ' + wrap['prefix'] + '[BODY]' + wrap['postfix']);
+            if (log_on)console.log('adding content wrapper - ' + wrap['prefix'] + '[BODY]' + wrap['postfix']);
             var textBodyWraps = ck_dom().createTextNode(domWraps);
             inline.appendChild(textBodyWraps);
 
             //add body class
             var bodyClasses = '$(\'body\').addClass(\'' + body_class + '\');';
-            if(log_on)console.log('update body classes - ' + body_class);
+            if (log_on)console.log('update body classes - ' + body_class);
             var textNodeBody = ck_dom().createTextNode(bodyClasses);
             inline.appendChild(textNodeBody);
 
             ck_dom().head.appendChild(inline);
         }
 
-        var _init = function(){
+        var _init = function () {
             $(window.document).ready(function ($) {
                 $('#edit-submit').on('click', function (e) {
                     _clean(textId);
@@ -211,16 +229,16 @@ if (!window.CKEDITOR_DS) {
             add_js_inline: function (obj) {
                 js_inline.push(obj);
             },
-            add_disposable_elements: function(obj){
+            add_disposable_elements: function (obj) {
                 desposable_elements.push(obj);
             },
             add_css: function (obj) {
                 css_styles.push(obj);
             },
-            set_wrap: function(obj){
+            set_wrap: function (obj) {
                 wrap = obj;
             },
-            set_body_class: function(obj){
+            set_body_class: function (obj) {
                 body_class = obj;
             },
             removeWraps: function (textId) {
@@ -236,7 +254,7 @@ if (!window.CKEDITOR_DS) {
                 _import_inline_js();
             },
             importCss: function () {
-               _importCss();
+                _importCss();
             },
             init: function () {
                 _init();
@@ -244,7 +262,7 @@ if (!window.CKEDITOR_DS) {
             editorId: function () {
                 return text_id;
             },
-            turnOnDebug: function(){
+            turnOnDebug: function () {
                 log_on = true;
             }
 
@@ -254,5 +272,5 @@ if (!window.CKEDITOR_DS) {
 }
 
 
-//CKEDITOR_DS.turnOnDebug();
+CKEDITOR_DS.turnOnDebug();
 CKEDITOR_DS.init();

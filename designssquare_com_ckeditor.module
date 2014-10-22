@@ -91,7 +91,7 @@ function designssquare_com_ckeditor_preprocess_page(&$vars)
         $elements_ref = array();
         drupal_alter('ckeditor_clean_elements', $elements_ref, $vars);
         foreach ($elements_ref as $key => $element_id) {
-            $js_to_add .= "   CKEDITOR_DS.add_disposable_elements('" . $element_id . "');" . "\n";
+            $js_to_add .= "   CKEDITOR_DS.add_disposable_elements(" . json_encode($element_id) . ");" . "\n";
         }
 
         drupal_add_js($js_to_add, array('scope' => 'footer', 'type' => 'inline', 'weight' => 1001));
