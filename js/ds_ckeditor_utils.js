@@ -178,48 +178,49 @@ if (!window.CKEDITOR_DS) {
                     _clean(textId);
                 });
             });
+            if(window.CKEDITOR){
+                CKEDITOR.on('instanceCreated', function (ev) {
+                    //ensure the following tags are not removed when empty
+                    CKEDITOR.dtd.$removeEmpty['b'] = 0;
+                    CKEDITOR.dtd.$removeEmpty['em'] = 0;
+                    CKEDITOR.dtd.$removeEmpty['i'] = 0;
+                    CKEDITOR.dtd.$removeEmpty['label'] = 0;
+                    CKEDITOR.dtd.$removeEmpty['small'] = 0;
+                    CKEDITOR.dtd.$removeEmpty['span'] = 0;
+                    CKEDITOR.dtd.$removeEmpty['strong'] = 0;
+                    CKEDITOR.dtd.$removeEmpty['u'] = 0;
+                    //make sure LI is not wrapped within UL
+                    delete CKEDITOR.dtd.$listItem['li'];
+                    delete CKEDITOR.dtd.$intermediate['li'];
+                    //make sure OPTIONS can be edited
+                    delete CKEDITOR.dtd.$nonEditable['option'];
 
-            CKEDITOR.on('instanceCreated', function (ev) {
-                //ensure the following tags are not removed when empty
-                CKEDITOR.dtd.$removeEmpty['b'] = 0;
-                CKEDITOR.dtd.$removeEmpty['em'] = 0;
-                CKEDITOR.dtd.$removeEmpty['i'] = 0;
-                CKEDITOR.dtd.$removeEmpty['label'] = 0;
-                CKEDITOR.dtd.$removeEmpty['small'] = 0;
-                CKEDITOR.dtd.$removeEmpty['span'] = 0;
-                CKEDITOR.dtd.$removeEmpty['strong'] = 0;
-                CKEDITOR.dtd.$removeEmpty['u'] = 0;
-                //make sure LI is not wrapped within UL
-                delete CKEDITOR.dtd.$listItem['li'];
-                delete CKEDITOR.dtd.$intermediate['li'];
-                //make sure OPTIONS can be edited
-                delete CKEDITOR.dtd.$nonEditable['option'];
+                    //disable filters
+                    ev.editor.on('customConfigLoaded', function () {
+                        ev.editor.config.allowedContent = true;
+                    });
 
-                //disable filters
-                ev.editor.on('customConfigLoaded', function () {
-                    ev.editor.config.allowedContent = true;
+                    if (ev.editor.name == textId) {
+                        ev.editor.on('contentDomUnload', function () {
+                            var data = ev.editor.getData();
+                            var jData = jQuery('<body>' + data + '</body>');
+                            if (jData.find('.ckeditor-wrapper-end').length) {
+                                _clean(textId);
+                            }
+                        });
+                        ev.editor.on('contentDom', function () {
+                            _write_js_imports(0);
+                        });
+                    }
                 });
 
-                if (ev.editor.name == textId) {
-                    ev.editor.on('contentDomUnload', function () {
-                        var data = ev.editor.getData();
-                        var jData = jQuery(data);
-                        if (jData.find('.ckeditor-wrapper-end').length) {
-                            _clean(textId);
-                        }
-                    });
-                    ev.editor.on('contentDom', function () {
-                        _write_js_imports(0);
-                    });
-                }
-            });
-
-            CKEDITOR.on('instanceReady', function (ev) {
-                var editor = ev.editor;
-                if (editor.name == textId) {
-                    _importCss();
-                }
-            });
+                CKEDITOR.on('instanceReady', function (ev) {
+                    var editor = ev.editor;
+                    if (editor.name == textId) {
+                        _importCss();
+                    }
+                });
+            }
         }
 
         var CKEDITOR_DS = {
@@ -272,5 +273,5 @@ if (!window.CKEDITOR_DS) {
 }
 
 
-CKEDITOR_DS.turnOnDebug();
+//CKEDITOR_DS.turnOnDebug();
 CKEDITOR_DS.init();
