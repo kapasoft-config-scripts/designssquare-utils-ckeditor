@@ -15,9 +15,10 @@ if (!window.CKEDITOR_DS) {
             desposable_elements = [], //element ref which content needs to be removed at clean time
             wrap = {},//holds object of tags to add before and after conent editor
             body_class = {},//holds classes to add to body tag
-            log_on = false;
+            log_on = false,
+            ck_loaded = false,//false beforing importing js/css and adding wrappers.
+            tear_down = false;//temp solution for overcame async nature of ck_loaded to avoid reconstract while tear down is happening
 
-//        var ck_dom = (CKEDITOR.instances[textId]) ? CKEDITOR.instances[textId].document.$ : {};
         var ck_dom = function () {
             if (CKEDITOR.instances[textId]) {
                 return CKEDITOR.instances[textId].document.$;
@@ -42,52 +43,51 @@ if (!window.CKEDITOR_DS) {
                 script.type = 'text/javascript';
                 script.onload = function () {
                     if (log_on)console.log('script ' + js_scripts[index]['path'] + ' loaded');
-                    //after importing jquery at index 0, we append wrappers to the body DOM depending on region
-                    if (index == 0) {
-                        if (ck_editor().getData() && !ck_dom().body.getElementsByClassName('ckeditor-wrapper-end').length) {
-                            _reconstruct_dom(wrap);
-                        }
-                    }
                     //import rest of the js libraries
                     _write_js_imports(next_index);
                 }
-                script.src = '/' + js_scripts[index]['path'];
+//                var base = BASE_URL || '/';
+                script.src = Drupal.settings.basePath + js_scripts[index]['path'];
                 script.$ = script;
-                ck_dom().head.appendChild(script);
+                if(js_scripts[index]['options']['scope'] == 'header'){
+                    ck_dom().head.appendChild(script);
+                }else{
+                    ck_dom().body.appendChild(script);
+                }
+
                 return;
             } else {
                 return _import_inline_js();
             }
         }
 
-        var _clean = function (textId) {
-            var decodedOldHtml = ck_editor().getData();
-            var jData = jQuery(decodedOldHtml);
+        var _clean = function () {
+            var jData = jQuery('<div>' + ck_editor().getData() + '</div>');
 
-            var newData = _removeWraps(jData);//removes wrapped layout before and after the content
-            _removeElements(newData);//removes all the removable elements content
+            var withoutWraps = _removeWraps(jData);//removes wrapped layout before and after the content
+            var cleanText = _removeElements(withoutWraps);//removes all the removable elements content
 
             //set textarea
-            $('#' + textId).html(newData.html());
+            $("#" + textId).val(cleanText.html());
+
             //set CKeditor content itself
             //@ToDo setData appears not working...need to be fixed
-            editor.setData(newData.html(), {
-                callback: function () {
-                    this.updateElement();
-                    if (log_on)console.log('removed wraps....:');
-                }
-            });
-
+            ck_editor().setData(
+                cleanText.html(),
+                {
+                    callback : function () {
+                        this.updateElement();
+                        ck_editor().fire( 'saveSnapshot' );
+                        if (log_on){console.log('removed wraps and elements. The editor data was reset....')};
+                    }
+                },
+                true
+            );
+            return cleanText.html();
         }
 
         var _removeElements = function (jData) {
             $.each(desposable_elements, function (index, obj) {
-//                var target = jData.find(id);
-//                if(target.length == 1){
-//                    target.empty();
-//                }else if(target.length >= 1){
-//
-//                }
                 jData.find(obj['id']).each(function () {
                     if (obj['remove'] == 'element') {
                         var cnt = $(this).contents();
@@ -110,6 +110,7 @@ if (!window.CKEDITOR_DS) {
 //                    });
                 });
             });
+            return jData;
         }
 
 
@@ -143,7 +144,7 @@ if (!window.CKEDITOR_DS) {
                 if (log_on)console.log('write inline js: ' + obj);
                 var textNode = ck_dom().createTextNode(obj);
                 inline.appendChild(textNode);
-                ck_dom().head.appendChild(inline);
+                ck_dom().body.appendChild(inline);
             });
         }
 
@@ -153,9 +154,22 @@ if (!window.CKEDITOR_DS) {
          *      an object with 'prefix' and 'postfix' attributes containing tags to add before and after the content of editor
          */
         var _reconstruct_dom = function (wrap) {
-            //@ToDo refactor to use setData CKEDITOR Api instead of appending children
-//                ck_dom = this.ck_dom();
-            //add wraps
+            //@ToDo refactor to use setData or some CKEDITOR Api instead of appending children
+
+            //imports jQuery to ensure its present before wrapping
+            var script = ck_dom().createElement('script');
+            script.type = 'text/javascript';
+            script.onload = function () {
+                if (log_on)console.log('imported jQuery lib before wrapping');
+                //add wraps
+                _wrap();
+            }
+            script.src = 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js';
+            script.$ = script;
+            ck_dom().head.appendChild(script);
+        }
+
+        var _wrap = function(){
             var inline = ck_dom().createElement('script');
             inline.type = 'text/javascript';
             var domWraps = 'if($(\'body\').length > 0){ $(\'body\').html(\'' + wrap['prefix'] + '\' + $(\"body\").html() + \'' + wrap['postfix'] + '\');}';
@@ -175,7 +189,11 @@ if (!window.CKEDITOR_DS) {
         var _init = function () {
             $(window.document).ready(function ($) {
                 $('#edit-submit').on('click', function (e) {
-                    _clean(textId);
+                    if(ck_loaded )//ensure its loaded before cleaning
+                        tear_down = true;
+                        //update status
+                        ck_loaded = false;
+                        _clean();
                 });
             });
             if(window.CKEDITOR){
@@ -201,23 +219,33 @@ if (!window.CKEDITOR_DS) {
                     });
 
                     if (ev.editor.name == textId) {
-                        ev.editor.on('contentDomUnload', function () {
-                            var data = ev.editor.getData();
-                            var jData = jQuery('<body>' + data + '</body>');
-                            if (jData.find('.ckeditor-wrapper-end').length) {
-                                _clean(textId);
+                        ev.editor.on('afterModeUnload', function(evt){
+                            if(ck_loaded){
+                                ck_loaded = false;
+                                evt.data = _clean();
+                            }
+                            console.log('cleaned editor content on mode change');
+                        });
+                        ev.editor.on('contentDomUnload', function (evt) {
+                            if(ck_loaded){//only clean when loaded
+                                _clean();
+                                //update status
+                                ck_loaded = false;
                             }
                         });
-                        ev.editor.on('contentDom', function () {
-                            _write_js_imports(0);
-                        });
-                    }
-                });
+                        ev.editor.on('contentDom', function (evt) {
+                            if(!ck_loaded && !tear_down){//checks if not already loaded and if we are not tear_down mode
+                                _importCss();
+                                //add wrappers before importing js
+                                if (ck_editor().getData() && !ck_editor().editable().find('ckeditor-wrapper-end').count()) {
+                                    _reconstruct_dom(wrap);
+                                }
+                                _write_js_imports(0);
 
-                CKEDITOR.on('instanceReady', function (ev) {
-                    var editor = ev.editor;
-                    if (editor.name == textId) {
-                        _importCss();
+                                //sets the current state
+                                ck_loaded=true;
+                            }
+                        });
                     }
                 });
             }
@@ -243,7 +271,9 @@ if (!window.CKEDITOR_DS) {
                 body_class = obj;
             },
             removeWraps: function (textId) {
-                _clean(textId);
+                _clean();
+                //update status
+                ck_loaded = false;
             },
             write_js_imports: function (index) {
                 _write_js_imports(index);
@@ -263,10 +293,21 @@ if (!window.CKEDITOR_DS) {
             editorId: function () {
                 return text_id;
             },
+            getDom: function () {
+                return ck_dom();
+            },
+            getEditor: function () {
+                return ck_editor();
+            },
             turnOnDebug: function () {
                 log_on = true;
+            },
+            getStatus: function (){
+                return ck_loaded;
+            },
+            setStatus: function (status){
+                ck_loaded = status;
             }
-
         }
         return CKEDITOR_DS;
     })(jQuery);

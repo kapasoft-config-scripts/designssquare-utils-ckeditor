@@ -23,7 +23,10 @@ function designssquare_com_ckeditor_js_alter(&$js)
 
 function designssquare_com_ckeditor_preprocess_page(&$vars)
 {
+//adding CKEditor JQuery Adapter
+//    drupal_add_js(drupal_get_path('module', 'designssquare_com_ckeditor') . '/adapters/jquery.js', array('scope' => 'footer', 'type' => 'file', 'weight' => JS_THEME));
 
+    //add CKEditor jQuery Adapter
     $reqUrl = $_GET['q'];
 
     //editor support
