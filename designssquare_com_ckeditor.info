@@ -1,7 +1,7 @@
 name = DesignsSquare CKEditor Widget
 description = plugins of CKEditor and other enhancements
 core = 7.x
-version = v0.1.6
+version = v0.1.7
 project = designssquare_com_ckeditor
 package = DesignsSquare.com.utilities.ckeditor
 files[] = designssquare_com_ckeditor.module

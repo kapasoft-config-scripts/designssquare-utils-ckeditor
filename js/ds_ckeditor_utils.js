@@ -213,6 +213,9 @@ if (!window.CKEDITOR_DS) {
                     //make sure OPTIONS can be edited
                     delete CKEDITOR.dtd.$nonEditable['option'];
 
+                    //prevent empty anchor tag for being removed
+                    CKEDITOR.dtd.$removeEmpty['a'] = 0;
+
                     //disable filters
                     ev.editor.on('customConfigLoaded', function () {
                         ev.editor.config.allowedContent = true;
