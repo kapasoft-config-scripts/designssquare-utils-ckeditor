@@ -219,7 +219,10 @@ if (!window.CKEDITOR_DS) {
                     //disable filters
                     ev.editor.on('customConfigLoaded', function () {
                         ev.editor.config.allowedContent = true;
+                        //allow php code
+//                        ev.editor.config.protectedSource = [];
                     });
+
 
                     if (ev.editor.name == textId) {
                         ev.editor.on('afterModeUnload', function(evt){

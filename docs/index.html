@@ -133,6 +133,7 @@
         <li><a href="#installation">Installation</a></li>
         <li><a href="#hooks">Hooks</a></li>
         <li><a href="#wraps">Wraps</a></li>
+        <li><a href="#tips">Tips For User</a></li>
         <li><a href="#troubleshoot">Troubleshoot</a></li>
         <li><a href="#backlog">Backlog</a></li>
         <li><a href="#releases">Releases</a></li>
@@ -331,6 +332,20 @@
         <p>In the following example, we remove all the content for the element with id "calendar" so does for elements with class
         name "vmaps". Then we remove element with id class '^=slimScroll' while keeping the content(i.e innerHtml()). At last, we remove an attribute - data-initialized
          from elements with class 'scroller' </p>
+    </section>
+    <section id="tips">
+        <h3>Tips for User</h3>
+        <hr>
+        <h5>1. Don't Copy in Full/Filter Mode</h5>
+        When block or node is loaded in Full/Filter mode, it also loads all the styles/Js and Hmlt wraps specific to
+        to the Theme, region,etc all of which is removed before because it cannot be part of the edited text. However, if
+        you copy in Full/Filter, then all that extra - styles/JS,html gots to be copied but it should be removed. Please,
+        make a copy from source or plain text mode to avoid copying extra stuff
+
+        <h5>2. Before editing Block, Assign to Region</h5>
+        Since the CKEditor looks at the region before determine which styles/JS/html wraps to add, its important to add
+        your block to proper region before edition to get complete seamless editing experience
+
     </section>
     <section id="troubleshoot">
         <h3>Troubleshoot</h3>
