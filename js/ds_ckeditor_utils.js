@@ -47,7 +47,8 @@ if (!window.CKEDITOR_DS) {
                     _write_js_imports(next_index);
                 }
 //                var base = BASE_URL || '/';
-                script.src = Drupal.settings.basePath + js_scripts[index]['path'];
+                script.src = js_scripts[index]['path'];
+//                script.src = Drupal.settings.basePath + js_scripts[index]['path'];
                 script.$ = script;
                 if(js_scripts[index]['options']['scope'] == 'header'){
                     ck_dom().head.appendChild(script);
@@ -127,7 +128,9 @@ if (!window.CKEDITOR_DS) {
         var _importCss = function () {
             editor = ck_editor();
             $.each(css_styles, function (index, css) {
-                editor.document.appendStyleSheet('/' + css);
+                editor.document.appendStyleSheet(css);
+//                editor.document.appendStyleSheet('/' + css);
+
                 if (log_on)console.log('css file ' + css + ' imported');
             });
         }
