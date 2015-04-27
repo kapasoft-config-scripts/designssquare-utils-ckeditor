@@ -134,6 +134,7 @@
         <li><a href="#hooks">Hooks</a></li>
         <li><a href="#wraps">Wraps</a></li>
         <li><a href="#tips">Tips For User</a></li>
+        <li><a href="#how_to">How To</a></li>
         <li><a href="#troubleshoot">Troubleshoot</a></li>
         <li><a href="#backlog">Backlog</a></li>
         <li><a href="#releases">Releases</a></li>
@@ -149,7 +150,7 @@
         <h2>Enhancing Drupal Themeing</h2>
         <hr>
         <ul>
-            <li>Last Updated: Oct 3, 2014</li>
+            <li>Last Updated: Apr 26, 2015</li>
             <li>Themed By: DesignsSquare.com</li>
             <li><a href="">
             </a>
@@ -170,7 +171,7 @@
 
         <p><b>Solution: </b></p>
 
-        <p>CKEDITOR Helper provides hooks, wraps along anything else for making your Drupal theme look seamless in
+        <p>CKEDITOR Helper provides hooks, wraps along anything else for making your Drupal theme editable seamless in
             CKEditor
         </p>
         <h4>About</h4>
@@ -180,7 +181,7 @@
             CKEditor for Drupal. In the following are list of main features:</p>
         <ol>
             <li>provides hooks to pass styles, js scripts, js inlines along many other things</li>
-            <li>provides way to pass layouts for any region of your theme</li>
+            <li>provides way to pass layouts(wraps) for any region of your theme</li>
             <li>Includes around 25 free most popular CKEDITOR plugins</li>
         </ol>
     </section>
@@ -198,15 +199,27 @@
 
         <h5>Steps For Installation</h5>
 
-        <p>In the following are steps to install CKeditor Helper
+        <p>In the following are two ways to install CKeditor Helper:
         <ol>
-            <li>Enabale CKEDITOR</li>
-            <li>
-                Copy "ckeditor" directory from "DesignsSquare CKEditor Widget" module "library" directory to the
-                sites/all/library/ckeditor directory
-            </li>
-            <li>Enable module - "DesignsSquare CKEditor Widget"</li>
+        <li><b>Manual Installation via UI</b><br>
+            <ol>
+                <li>Enabale CKEDITOR</li>
+                <li>
+                    Copy "ckeditor" directory from "DesignsSquare CKEditor Widget" module "library" directory to the
+                    sites/all/library/ckeditor directory
+                </li>
+                <li>Enable module - "DesignsSquare CKEditor Widget"</li>
+            </ol>
+        </li>
+        <li><b>Automatic Installation via Drush/<a http="http://designssquare.com/workflow-docs/" target="_blank">WorkFlow</a></b><br>
+        To install and configure CKEditor:<br>
+            <code>
+                drush ca @ALIAS --tag=editor,clear<br>
+            </code>
+            <p>Note: the module - <a http="https://github.com/kapasoft-config-scripts/designssquare-utils-ckeditor" target="_blank">"DesignsSquare CKEditor Widget"</a> has to be present</p>
+        </li>
         </ol>
+
         </p>
     </section>
     <section id="hooks">
@@ -231,16 +244,16 @@
                     $vars:ARRAY(the $vars variable from HOOK_preprocess_page)<br>
                 </td>
                 <td>JS Scripts</td>
-                <td>for passing js scripts to import in editor. Note: first has to be jQuery lib</td>
+                <td>for passing js scripts  and js inline to import in editor. Note: first has to be jQuery lib. The variable $js_scripts['options'][N]['type'] determines if js script or js inline code</td>
             </tr>
-            <tr>
-                <td>HOOK_ckeditor_js_inline_alter(&$js_inline, $vars)</td>
-                <td>$js_inline:ARRAY[N][]:STRING(inline js code)<br>
-                    $vars:ARRAY(the $vars variable from HOOK_preprocess_page)<br>
-                </td>
-                <td>JS Inline Code</td>
-                <td>for passing js inline code appended last to execute</td>
-            </tr>
+            <!--<tr>-->
+                <!--<td>HOOK_ckeditor_js_inline_alter(&$js_inline, $vars)</td>-->
+                <!--<td>$js_inline:ARRAY[N][]:STRING(inline js code)<br>-->
+                    <!--$vars:ARRAY(the $vars variable from HOOK_preprocess_page)<br>-->
+                <!--</td>-->
+                <!--<td>JS Inline Code</td>-->
+                <!--<td>for passing js inline code appended last to execute</td>-->
+            <!--</tr>-->
             <tr>
                 <td>HOOK_ckeditor_wrap_alter(&$wraps, $vars, $region)</td>
                 <td>$wraps:[prefix]:STRING(html tags before the editable content for particular regions)<br>
@@ -284,29 +297,29 @@
     <section id="wraps">
     <h3>Wraps</h3>
         <hr>
-        <p>when the editor is loading some block within a valid region from current Drupal theme, then it needs the html layout before and after loaded as well to style accordingly.
-        To do so, you will have to specify and supply these html wraps via hook HOOK_ckeditor_wrap_alter(&$wraps, $vars) where the $wraps array contains
-            the 'prefix' and 'postfix' with the layout html to load before and after accordingly. Here is an example:
-            <code><br>
-                function designssquare_com_theme_metronic_ckeditor_wrap_alter(&$content_wrap, $vars, $region){<br>
-                $prefix = '';<br>
-                $postfix = '';<br>
-                <br>
-                switch ($region) {<br>
-                case 'header':<br>
-                $prefix = '<div class="page-header navbar navbar-fixed-top"><div class="page-header-inner"><div class="top-menu"><ul class="nav navbar-nav pull-right ckeditor-wrapper-end">';<br>
-                    $postfix = '</ul></div></div></div>';<br>
-                break;<br>
-                //other regions<br>
-                case 'main': //main content<br>
-                $prefix = '<div class="page-container"><div class="page-content-wrapper"><div class="page-content ckeditor-wrapper-end">';<br>
-                    $postfix = '</div></div></div>';<br>
-                break;<br>
-                }<br>
-                $content_wrap['prefix'] = $prefix;<br>
-                $content_wrap['postfix'] = $postfix;<br>
-                }<br>
-            </code><br>
+        <p>Besides importing CSS and JS libraries, the editor also have to wrap appropriate html tags for the content of particular region/block to achieve seamless editing effect.
+        To do so, you will have to specify and supply these HTML tag wraps via hook HOOK_ckeditor_wrap_alter(&$wraps, $vars) where the $wraps array contains
+            the 'prefix' and 'postfix' elements each containing the html tags that goes before and after the editable content. Here is an example:
+            <br><code><textarea cols="90" rows="20">
+                function designssquare_com_theme_metronic_ckeditor_wrap_alter(&$content_wrap, $vars, $region){
+                    $prefix = '';
+                    $postfix = '';
+
+                    switch ($region) {
+                        case 'header':
+                            $prefix = '<div class="page-header navbar navbar-fixed-top"><div class="page-header-inner"><div class="top-menu"><ul class="nav navbar-nav pull-right ckeditor-wrapper-end">';
+                            $postfix = '</ul></div></div></div>';
+                        break;
+                        //other regions
+                        case 'main': //main content
+                            $prefix = '<div class="page-container"><div class="page-content-wrapper"><div class="page-content ckeditor-wrapper-end">';
+                            $postfix = '</div></div></div>';
+                        break;
+                    }
+                    $content_wrap['prefix'] = $prefix;
+                    $content_wrap['postfix'] = $postfix;
+                }
+                </textarea></code><br>
             Here, we switch based on the region and then set the html tags that goes before the region at "prefix" index and
             the html tags that goes after the region are set at 'postfix' index
         </p>
@@ -323,34 +336,127 @@
         Here is an example as following</p>
         <code>
          function HOOK_ckeditor_clean_elements_alter(&$desposable_elements, $vars){(){<br>
-            $desposable_elements[] = array('id' => '#calendar', 'remove' => 'content');<br>
-            $desposable_elements[] = array('id' => '.vmaps', 'remove' => 'content');<br>
-            $desposable_elements[] = array('id' => '[class^=slimScroll]', 'remove' => 'element');<br>
-            $desposable_elements[] = array('id' => '.scroller', 'remove' => 'attr', 'attr' =>array('data-initialized'));<br>
+            &nbsp;&nbsp;$desposable_elements[] = array('id' => '#calendar', 'remove' => 'content');<br>
+            &nbsp;&nbsp;$desposable_elements[] = array('id' => '.vmaps', 'remove' => 'content');<br>
+            &nbsp;&nbsp;$desposable_elements[] = array('id' => '[class^=slimScroll]', 'remove' => 'element');<br>
+            &nbsp;&nbsp;$desposable_elements[] = array('id' => '.scroller', 'remove' => 'attr', 'attr' =>array('data-initialized'));<br>
         }<br>
         </code>
         <p>In the following example, we remove all the content for the element with id "calendar" so does for elements with class
         name "vmaps". Then we remove element with id class '^=slimScroll' while keeping the content(i.e innerHtml()). At last, we remove an attribute - data-initialized
          from elements with class 'scroller' </p>
+        <h5>For Example</h5>
+        <p>For example, we may be importing JS scripts in the body, so we have to clean out them on saving event:
+        <code><br>
+            function designssquare_com_theme_smartbox_ckeditor_clean_elements_alter(&$desposable_elements, $vars){<br>
+            &nbsp;&nbsp;$desposable_elements[] = array('id' => 'script', 'remove' => 'content');<br>
+            &nbsp;&nbsp;$desposable_elements[] = array('id' => 'script', 'remove' => 'element');<br>
+            }<br>
+        </code>
+        Here, we are telling remove all tags with 'script' and its content. By specifying 'content' for 'remove' value, we are instructiong
+            to remove the innerHtml of 'script' tags. By specifying 'element' for 'remove' value, we are instructing
+             to remove also the 'script' tag itself
+        </p>
     </section>
     <section id="tips">
         <h3>Tips for User</h3>
         <hr>
         <h5>1. Don't Copy in Full/Filter Mode</h5>
-        When block or node is loaded in Full/Filter mode, it also loads all the styles/Js and Hmlt wraps specific to
+        <p>When block or node is loaded in Full/Filter mode, it also loads all the styles/Js and Hmlt wraps specific to
         to the Theme, region,etc all of which is removed before because it cannot be part of the edited text. However, if
         you copy in Full/Filter, then all that extra - styles/JS,html gots to be copied but it should be removed. Please,
-        make a copy from source or plain text mode to avoid copying extra stuff
+        make a copy from source or plain text mode to avoid copying extra stuff</p>
 
         <h5>2. Before editing Block, Assign to Region</h5>
-        Since the CKEditor looks at the region before determine which styles/JS/html wraps to add, its important to add
-        your block to proper region before edition to get complete seamless editing experience
+        <p>Since the CKEditor looks at the region before determine which styles/JS/html wraps to add, its important to add
+        your block to proper region before edition to get complete seamless editing experience</p>
 
+    </section>
+    <section id="how_to">
+        <h3>How To</h3>
+        <hr>
+        <h5>1. How To Incorporate Theme's JavaScript libraries Into CKEditor</h5>
+        <p>To import JS, use hook - HOOK_ckeditor_js_scripts_alter as following:<br>
+            <textarea cols='150' rows='15'>
+                function HOOK_ckeditor_js_scripts_alter(&$js_scripts, $vars)
+                {
+                $type = (isset($vars['node']) && isset($vars['node']->type)) ? $vars['node']->type : 'default';
+
+                $path_to_theme = base_path() . drupal_get_path('theme', 'metronic');
+
+                $js_scripts[] =   array('path' =>  $path_to_theme . '/assets/global/plugins/jquery-1.11.0.min.js', 'options' => array('scope' => 'header', 'type' => 'file'));
+                $js_scripts[] =   array('path' =>  $path_to_theme . '/assets/global/plugins/jquery-migrate-1.2.1.min.js', 'options' => array('scope' => 'header', 'type' => 'file'));
+                switch($type){
+                    case 'home':
+                        $js_scripts = array_merge($js_scripts, _home_js_list());
+                    break;
+                    default:
+                        $js_scripts = array_merge($js_scripts, _default_js_list());
+                    }
+                }
+
+                function _home_js_list(){
+                    $js_list = array();
+                    $path_to_theme = base_path() . drupal_get_path('theme', 'THEME-NAME');
+
+                    $js_list[] =   array('path' =>  $path_to_theme . '/assets/global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js', 'options' => array('scope' => 'footer', 'type' => 'file'));
+                    $js_list[] =   array('path' =>  $path_to_theme . '/assets/global/plugins/bootstrap/js/bootstrap.js', 'options' => array('scope' => 'footer', 'type' => 'file'));
+                    return $js_list;
+                }
+            </textarea><br>
+            Here, the hook is used to alter array of js libraries to be included in CKEditor
+        </p>
+        <h5>1. How To Incorporate Theme's CSS Into CKEditor</h5>
+        <p>To import CSS, use hook as following:<br>
+            <textarea cols='150' rows='15'>
+                function HOOK_ckeditor_css_alter(&$css_scripts, $vars)
+                {
+                    $type = (isset($vars['node']) && isset($vars['node']->type)) ? $vars['node']->type : 'default';
+
+                    $path_to_theme = base_path() . drupal_get_path('theme', 'THEME-NAME');
+
+                    $css_scripts[] = array($path_to_theme . '/smartbox/stylesheets/bootstrap.css');
+                    $css_scripts[] = array($path_to_theme . '/smartbox/stylesheets/some.css');
+                    switch($type){
+                        case 'home':
+                            $css_scripts = array_merge($css_scripts, _home_css_list());
+                        break;
+                        default:
+                            $css_scripts = array_merge($css_scripts, _default_css_list());
+                    }
+                }
+
+                function _home_css_list(){
+                    $css_scripts = array();
+                    $path_to_theme = base_path() . drupal_get_path('theme', 'THEME-NAME');
+
+                    $css_scripts[] = array($path_to_theme . '/smartbox/stylesheets/bootstrap.css');
+                    $css_scripts[] = array($path_to_theme . '/smartbox/stylesheets/home.css');
+
+                    return $css_scripts;
+                }
+            </textarea><br>
+            Here, the hook - HOOK_ckeditor_css_alter is used to alter array of list of path to css files to be included in CKEditor. Important to note, the array contains only path of CSS files that is different
+            than the format of $js_scripts array above in hook - HOOK_ckeditor_js_scripts_alter
+        </p>
+        <h5>How To grab content loaded in editor?</h5>
+        <p>To see what was loaded, open Js Console and type the following:
+        <code><br>
+            var ed = CKEDITOR_DS.getEditor();<br>
+            ed.document.$.body<br>
+        </code>
+         This will display body content of the CKEditor instance currently loaded
+        </p>
     </section>
     <section id="troubleshoot">
         <h3>Troubleshoot</h3>
         <hr>
-        <h5>1.@ToDo</h5>
+        <h5>1.CKeditor loads but not CKeditor plugins</h5>
+        <p>Make sure you refresh cache/run cron tasks after initial installation</p>
+        <h5>2. Error in JS Console "Uncaught SyntaxError: Unexpected token <"</h5>
+        <p>Make sure you have provided proper path to JS/CSS files. Particularly, the path has to start with '/'(i.e base_path()) relative to root</p>
+
+
     </section>
     <section id="backlog">
         <h3>Things In Progress</h3>
@@ -365,6 +471,10 @@
         <h5>Release 0.1</h5>
         <ul>
             <li>basic functionality with hooks and wraps</li>
+        </ul>
+        <h5>Release 0.1.11</h5>
+        <ul>
+            <li>get rid off hook ckeditor_js_inline_alter by adding js inline functionality to existing js script hook - ckeditor_js_alter </li>
         </ul>
     </section>
 </div>

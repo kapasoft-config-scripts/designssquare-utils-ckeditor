@@ -36,13 +36,16 @@ function designssquare_com_ckeditor_preprocess_page(&$vars)
         $js_scripts = array();
         drupal_alter('ckeditor_js_scripts', $js_scripts, $vars);
         foreach ($js_scripts as $key => $script) {
+            if ($script['options']['type'] != 'inline') {
             $js_to_add .= "   CKEDITOR_DS.add_js_script(" . json_encode($script) . ");" . "\n";
+            }
         }
 
         //grab inline to execute
         $js_inline_scripts = array();
-        drupal_alter('ckeditor_js_inline', $js_inline_scripts, $vars);
-        foreach ($js_inline_scripts as $key => $js_script) {
+//        drupal_alter('ckeditor_js_inline', $js_inline_scripts, $vars);
+//        foreach ($js_inline_scripts as $key => $js_script) {
+        foreach ($js_scripts as $key => $js_script) {
             if ($js_script['options']['type'] == 'inline') {
                 $load = preg_replace("/(\n\r|\r\n|\n|\r)/", "", $js_script['path']);
                 $js_to_add .= '   CKEDITOR_DS.add_js_inline("' . $load . '");' . "\n";

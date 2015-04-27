@@ -247,9 +247,9 @@ if (!window.CKEDITOR_DS) {
                                 _importCss();
                                 //add wrappers before importing js
                                 if (ck_editor().getData() && !ck_editor().editable().find('ckeditor-wrapper-end').count()) {
-                                    _reconstruct_dom(wrap);
+                                    _reconstruct_dom(wrap);//@ToDo Ensure wrapping html finishes before proceeding on importing js
                                 }
-                                _write_js_imports(0);
+                                _write_js_imports(0);//@ToDo We are under assumption that the first is JQuery library inserted in header, but if user provides other than JS lib inserted in body then we have extra garbage to clean
 
                                 //sets the current state
                                 ck_loaded=true;
